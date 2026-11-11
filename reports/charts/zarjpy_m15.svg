@@ -2,7 +2,7 @@
 <rect width="1180" height="540" fill="#101b2b"/>
 <rect x="83" y="90" width="811" height="383" fill="#132235" rx="4"/>
 <text x="83" y="37" fill="#f2f7ff" font-size="23" font-weight="700" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">ZAR/JPY   15分足   |   Bid OHLC・確定足のみ</text>
-<text x="83" y="61" fill="#9fb1c8" font-size="14" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">データ生成 2026/11/11 13:51 JST　 /　最新確定 2026/11/11 13:45 JST</text>
+<text x="83" y="61" fill="#9fb1c8" font-size="14" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">データ生成 2026/11/11 13:52 JST　 /　最新確定 2026/11/11 13:45 JST</text>
 <text x="83" y="80" fill="#afbbcc" font-size="13" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">ダウ 混在・転換・レンジ　RSI14 50.3　MACD 0.0032</text>
 <line x1="83" y1="90" x2="894" y2="90" stroke="#2a3c51" stroke-width="0.8" stroke-dasharray="3,6" />
 <text x="74" y="94" fill="#99abc0" font-size="12" font-weight="400" text-anchor="end" font-family="Arial, Noto Sans JP, sans-serif">9.6744</text>
@@ -242,7 +242,7 @@
 <text x="921" y="293.07299490633073" fill="#fe9d86" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">R3 9.6130   抵抗候補</text>
 <line x1="894" y1="296.3795648795656" x2="910" y2="315.07299490633073" stroke="#fe9d86" stroke-width="1.2" />
 <rect x="912" y="302.07299490633073" width="254" height="20" fill="#23334a" rx="4"/>
-<text x="921" y="317.07299490633073" fill="#fe9d86" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">R1 9.6120   抵抗候補</text>
+<text x="921" y="317.07299490633073" fill="#fe9d86" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">R1 9.6120   ショート開始観察</text>
 <line x1="894" y1="296.3795648795656" x2="910" y2="339.07299490633073" stroke="#fe9d86" stroke-width="1.2" />
 <rect x="912" y="326.07299490633073" width="254" height="20" fill="#23334a" rx="4"/>
 <text x="921" y="341.07299490633073" fill="#fe9d86" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">R2 9.6120   抵抗候補</text>
@@ -251,13 +251,13 @@
 <text x="921" y="365.07299490633073" fill="#f3c66a" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">C 9.6110   最新確定終値</text>
 <line x1="894" y1="329.4452646119315" x2="910" y2="387.07299490633073" stroke="#42bece" stroke-width="1.2" />
 <rect x="912" y="374.07299490633073" width="254" height="20" fill="#23334a" rx="4"/>
-<text x="921" y="389.07299490633073" fill="#42bece" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">S1 9.6020   支持候補</text>
+<text x="921" y="389.07299490633073" fill="#42bece" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">S1 9.6020   ショート解除①観察</text>
 <line x1="894" y1="336.0584045584071" x2="910" y2="411.07299490633073" stroke="#42bece" stroke-width="1.2" />
 <rect x="912" y="398.07299490633073" width="254" height="20" fill="#23334a" rx="4"/>
-<text x="921" y="413.07299490633073" fill="#42bece" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">S2 9.6000   支持候補</text>
+<text x="921" y="413.07299490633073" fill="#42bece" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">S2 9.6000   ショート解除②観察</text>
 <line x1="894" y1="352.5912544245872" x2="910" y2="435.07299490633073" stroke="#42bece" stroke-width="1.2" />
 <rect x="912" y="422.07299490633073" width="254" height="20" fill="#23334a" rx="4"/>
 <text x="921" y="437.07299490633073" fill="#42bece" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">S3 9.5950   支持候補</text>
 <text x="83" y="524" fill="#a7bad0" font-size="12" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">● H = 確定スイング高値　● L = 確定スイング安値　R = 抵抗候補　S = 支持候補</text>
-<text x="912" y="524" fill="#a7bad0" font-size="11" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">参考水準・売買指示ではありません</text>
+<text x="912" y="524" fill="#a7bad0" font-size="11" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">観察候補：条件未確認なら発注しない</text>
 </svg>

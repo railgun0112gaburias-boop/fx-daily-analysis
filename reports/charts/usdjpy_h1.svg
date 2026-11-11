@@ -2,7 +2,7 @@
 <rect width="1180" height="540" fill="#101b2b"/>
 <rect x="83" y="90" width="811" height="383" fill="#132235" rx="4"/>
 <text x="83" y="37" fill="#f2f7ff" font-size="23" font-weight="700" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">USD/JPY   1時間足   |   Bid OHLC・確定足のみ</text>
-<text x="83" y="61" fill="#9fb1c8" font-size="14" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">データ生成 2026/11/11 13:51 JST　 /　最新確定 2026/11/11 13:00 JST</text>
+<text x="83" y="61" fill="#9fb1c8" font-size="14" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">データ生成 2026/11/11 13:52 JST　 /　最新確定 2026/11/11 13:00 JST</text>
 <text x="83" y="80" fill="#afbbcc" font-size="13" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">ダウ 上昇　RSI14 71.1　MACD 0.1809</text>
 <line x1="83" y1="90" x2="894" y2="90" stroke="#2a3c51" stroke-width="0.8" stroke-dasharray="3,6" />
 <text x="74" y="94" fill="#99abc0" font-size="12" font-weight="400" text-anchor="end" font-family="Arial, Noto Sans JP, sans-serif">159.068</text>
@@ -249,13 +249,13 @@
 <text x="921" y="117.82478632478731" fill="#fe9d86" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">R2 158.958   抵抗候補</text>
 <line x1="894" y1="120.36435519484263" x2="910" y2="139.8247863247873" stroke="#fe9d86" stroke-width="1.2" />
 <rect x="912" y="126.82478632478731" width="254" height="20" fill="#23334a" rx="4"/>
-<text x="921" y="141.8247863247873" fill="#fe9d86" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">R1 158.948   抵抗候補</text>
+<text x="921" y="141.8247863247873" fill="#fe9d86" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">R1 158.948   戻り売り/上抜け観察</text>
 <line x1="894" y1="139.91903549428594" x2="910" y2="163.8247863247873" stroke="#f3c66a" stroke-width="1.2" />
 <rect x="912" y="150.8247863247873" width="254" height="20" fill="#23334a" rx="4"/>
 <text x="921" y="165.8247863247873" fill="#f3c66a" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">C 158.871   最新確定終値</text>
 <line x1="894" y1="192.74206799148425" x2="910" y2="190.74206799148425" stroke="#42bece" stroke-width="1.2" />
 <rect x="912" y="177.74206799148425" width="254" height="20" fill="#23334a" rx="4"/>
-<text x="921" y="192.74206799148425" fill="#42bece" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">S1 158.663   支持候補</text>
+<text x="921" y="192.74206799148425" fill="#42bece" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">S1 158.663   押し目/下抜け観察</text>
 <line x1="894" y1="308.29245157910964" x2="910" y2="306.29245157910964" stroke="#42bece" stroke-width="1.2" />
 <rect x="912" y="293.29245157910964" width="254" height="20" fill="#23334a" rx="4"/>
 <text x="921" y="308.29245157910964" fill="#42bece" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">S2 158.208   支持候補</text>
@@ -263,5 +263,5 @@
 <rect x="912" y="317.29245157910964" width="254" height="20" fill="#23334a" rx="4"/>
 <text x="921" y="332.29245157910964" fill="#42bece" font-size="12" font-weight="600" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">S3 158.168   支持候補</text>
 <text x="83" y="524" fill="#a7bad0" font-size="12" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">● H = 確定スイング高値　● L = 確定スイング安値　R = 抵抗候補　S = 支持候補</text>
-<text x="912" y="524" fill="#a7bad0" font-size="11" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">参考水準・売買指示ではありません</text>
+<text x="912" y="524" fill="#a7bad0" font-size="11" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">観察候補：条件未確認なら発注しない</text>
 </svg>

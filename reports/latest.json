@@ -1,5 +1,5 @@
 {
-  "generatedUTC": "2026-11-11T04:51:06.922Z",
+  "generatedUTC": "2026-11-11T04:52:16.214Z",
   "source": "Dukascopy via dukascopy-node (Bid OHLC)",
   "quickCheck": false,
   "marketDataOnly": true,
@@ -12,7 +12,7 @@
           "status": "ok",
           "count": 1227,
           "latestCloseUTC": "2026-11-11T04:45:00.000Z",
-          "ageHours": 0.1,
+          "ageHours": 0.12,
           "close": 9.611,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -76,7 +76,7 @@
           "status": "ok",
           "count": 1052,
           "latestCloseUTC": "2026-11-11T04:00:00.000Z",
-          "ageHours": 0.85,
+          "ageHours": 0.87,
           "close": 9.616,
           "trend": "上昇",
           "importantHighs": [
@@ -140,7 +140,7 @@
           "status": "ok",
           "count": 593,
           "latestCloseUTC": "2026-11-11T04:00:00.000Z",
-          "ageHours": 0.85,
+          "ageHours": 0.87,
           "close": 9.616,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -204,7 +204,7 @@
           "status": "ok",
           "count": 399,
           "latestCloseUTC": "2026-11-11T00:00:00.000Z",
-          "ageHours": 4.85,
+          "ageHours": 4.87,
           "close": 9.593,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -268,7 +268,7 @@
           "status": "ok",
           "count": 57,
           "latestCloseUTC": "2026-11-09T00:00:00.000Z",
-          "ageHours": 52.85,
+          "ageHours": 52.87,
           "close": 9.559,
           "trend": "下落",
           "importantHighs": [
@@ -350,7 +350,7 @@
           "status": "ok",
           "count": 1227,
           "latestCloseUTC": "2026-11-11T04:45:00.000Z",
-          "ageHours": 0.1,
+          "ageHours": 0.12,
           "close": 158.83,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -414,7 +414,7 @@
           "status": "ok",
           "count": 1052,
           "latestCloseUTC": "2026-11-11T04:00:00.000Z",
-          "ageHours": 0.85,
+          "ageHours": 0.87,
           "close": 158.871,
           "trend": "上昇",
           "importantHighs": [
@@ -474,7 +474,7 @@
           "status": "ok",
           "count": 593,
           "latestCloseUTC": "2026-11-11T04:00:00.000Z",
-          "ageHours": 0.85,
+          "ageHours": 0.87,
           "close": 158.871,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -538,7 +538,7 @@
           "status": "ok",
           "count": 399,
           "latestCloseUTC": "2026-11-11T00:00:00.000Z",
-          "ageHours": 4.85,
+          "ageHours": 4.87,
           "close": 158.711,
           "trend": "上昇",
           "importantHighs": [
@@ -602,7 +602,7 @@
           "status": "ok",
           "count": 57,
           "latestCloseUTC": "2026-11-09T00:00:00.000Z",
-          "ageHours": 52.85,
+          "ageHours": 52.87,
           "close": 158.297,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
