@@ -1,0 +1,17 @@
+{
+  "name": "fx-daily-five-timeframe",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Daily ZAR/JPY and USD/JPY 5 timeframe OHLC checks using Dukascopy",
+  "scripts": {
+    "analyze": "node src/analyze.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "dukascopy-node": "1.51.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
