@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import {getHistoricalRates} from 'dukascopy-node';
 import {normalizeCandles,closedOnly,weeksFromDaily,summarize} from './indicators.mjs';
+import {renderAnnotatedChart} from './charts.mjs';
 
 // FX_QUICK_CHECK=1 limits data lookback for first connection test.
 // First verify that both instruments are available; a quick check is NOT the full production analysis.
@@ -12,8 +13,10 @@ const report={generatedUTC:new Date(now).toISOString(),source:'Dukascopy via duk
 const toJst=iso=>new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(iso));
 const price=(n,s)=>typeof n==='number'&&Number.isFinite(n)?n.toFixed(s==='ZAR/JPY'?4:3):'未取得';
 const level=(p,s)=>price(p.price,s);
+await fs.rm('reports/charts',{recursive:true,force:true});
+await fs.mkdir('reports/charts',{recursive:true});
 for(const pair of pairs){
-  const frames={},errors=[];let completedDaily=null;
+  const frames={},errors=[],candleSets={};let completedDaily=null;
   for(const [frame,days] of Object.entries(config)){
     try{
       const rows=await getHistoricalRates({
@@ -23,6 +26,7 @@ for(const pair of pairs){
         batchSize:8,pauseBetweenBatchesMs:500,retryCount:2,failAfterRetryCount:true
       });
       const clean=closedOnly(normalizeCandles(rows),frame,now);
+      candleSets[frame]=clean;
       if(frame==='d1')completedDaily=clean;
       const result=summarize(clean,frame,now);
       frames[frame]={...result,rawCount:rows.length,confirmedCount:clean.length};
@@ -34,12 +38,23 @@ for(const pair of pairs){
   }
   if(completedDaily?.length){
     const weeks=weeksFromDaily(completedDaily,now);
+    candleSets.w1=weeks.closed;
     frames.w1={...summarize(weeks.closed,'w1',now),formingWeek:weeks.forming};
   }else{
     frames.w1={status:'unavailable',error:'daily candles were not retrieved'};
     errors.push('w1: daily candles missing');
   }
-  report.pairs[pair.symbol]={account:pair.account,frames,errors};
+  const charts={};
+  for(const tf of ['m15','h1','h4','d1','w1']){
+    if(frames[tf]?.status!=='ok'||!candleSets[tf]?.length)continue;
+    const file='charts/'+pair.instrument+'_'+tf+'.svg';
+    try{
+      const svg=renderAnnotatedChart({symbol:pair.symbol,timeframe:tf,candles:candleSets[tf],summary:frames[tf],generatedUTC:report.generatedUTC});
+      await fs.writeFile('reports/'+file,svg,'utf8');
+      charts[tf]=file;
+    }catch(e){errors.push('chart '+tf+': '+String(e.message||e));}
+  }
+  report.pairs[pair.symbol]={account:pair.account,frames,charts,errors};
 }
 const lines=[
   '# FX 5時間足 データ確認（'+toJst(report.generatedUTC)+' JST）',
@@ -48,6 +63,9 @@ const lines=[
 ];
 for(const [sym,p] of Object.entries(report.pairs)){
   lines.push('\n## '+sym+'（'+p.account+'）');
+  if(p.charts.h4)lines.push('\n**注釈付き4時間足チャート（重要高安値・支持・抵抗を書き込み）**\n\n!['+sym+' 4時間足・注釈付き](./'+p.charts.h4+')\n');
+  const chartLinks=['m15','h1','h4','d1','w1'].filter(tf=>p.charts[tf]).map(tf=>'['+({m15:'15分',h1:'1時間',h4:'4時間',d1:'日足',w1:'週足'}[tf])+'](./'+p.charts[tf]+')');
+  if(chartLinks.length)lines.push('**全5時間足の注釈チャート**：'+chartLinks.join(' / '));
   for(const frame of ['m15','h1','h4','d1','w1']){
     const x=p.frames[frame];
     if(x.status!=='ok'){
