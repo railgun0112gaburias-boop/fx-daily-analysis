@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 55
     env:
-      FX_QUICK_CHECK: ${{ (github.event_name == 'push' || inputs.quick_check == true) && '1' || '0' }}
+      FX_QUICK_CHECK: ${{ (inputs.quick_check == true) && '1' || '0' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
