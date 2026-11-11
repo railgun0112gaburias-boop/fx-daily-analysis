@@ -21,3 +21,10 @@ Node.js 20以降で npm install、npm test、npm run analyze を実行します�
 
 データ取得元: https://www.dukascopy-node.app/config/node
 GitHub Actions仕様: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
+
+## 注釈付きチャート
+- 毎回、ZAR/JPY・USD/JPYそれぞれの15分・1時間・4時間・日足・週足について、ローソク足SVG（計10枚）を `reports/charts/` に生成します。
+- 各SVGには、確定したスイング高値・安値（H/L）、支持候補（S）、抵抗候補（R）、最新の確定足終値、データ生成日時と最新確定足日時を描画します。
+- ZAR/JPYはS/Rをショート開始・第一/第二解除の「観察候補」として、USD/JPYは押し目・戻り売り・ブレイクの「観察候補」として表示します。価格の確定指示ではなく、追加のローソク足・損切り・口座リスク確認が必要です。
+- `reports/latest.md` に各通貨の4時間足画像を埋め込み、全5時間足の画像リンクを掲載しています。
+- データ取得不能または確定足が不足した時間足については、以前のSVGを現在値として使い回しません。
