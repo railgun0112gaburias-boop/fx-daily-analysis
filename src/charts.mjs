@@ -52,9 +52,21 @@ export function renderAnnotatedChart({symbol,timeframe,candles,summary,generated
   out.push(line(L,py,X,py,'#f3c66a',1.6,'6,4'));
   // Draw three nearest support/resistance candidates and verified high/low pivots.
   const marks=[];
+  const markRole=(prefix,i)=>{
+    if(symbol==='ZAR/JPY'){
+      if(prefix==='R'&&i===0)return 'ショート開始観察';
+      if(prefix==='S'&&i===0)return 'ショート解除①観察';
+      if(prefix==='S'&&i===1)return 'ショート解除②観察';
+    }
+    if(symbol==='USD/JPY'){
+      if(prefix==='R'&&i===0)return '戻り売り/上抜け観察';
+      if(prefix==='S'&&i===0)return '押し目/下抜け観察';
+    }
+    return prefix==='S'?'支持候補':'抵抗候補';
+  };
   const decorate=(arr,prefix,color)=>{
     arr?.slice(0,3).forEach((point,i)=>{
-      if(point?.price>=lo&&point.price<=hi)marks.push({price:point.price,label:prefix+(i+1),color,kind:prefix==='S'?'支持候補':'抵抗候補'});
+      if(point?.price>=lo&&point.price<=hi)marks.push({price:point.price,label:prefix+(i+1),color,kind:markRole(prefix,i)});
     });
   };
   decorate(summary.supports,'S','#42bece');
@@ -99,7 +111,7 @@ export function renderAnnotatedChart({symbol,timeframe,candles,summary,generated
     out.push(text(X+27,ly+2,m.label+' '+fmt(m.price,symbol)+'   '+m.kind,{fill:m.color,size:12,weight:600}));
   });
   out.push(text(L,H-16,'● H = 確定スイング高値　● L = 確定スイング安値　R = 抵抗候補　S = 支持候補',{fill:'#a7bad0',size:12}));
-  out.push(text(X+18,H-16,'参考水準・売買指示ではありません',{fill:'#a7bad0',size:11}));
+  out.push(text(X+18,H-16,'観察候補：条件未確認なら発注しない',{fill:'#a7bad0',size:11}));
   out.push('</svg>');
   return out.join('\n');
 }
