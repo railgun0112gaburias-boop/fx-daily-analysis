@@ -1,5 +1,5 @@
 {
-  "generatedUTC": "2026-11-11T04:49:38.005Z",
+  "generatedUTC": "2026-11-11T04:50:18.426Z",
   "source": "Dukascopy via dukascopy-node (Bid OHLC)",
   "quickCheck": false,
   "marketDataOnly": true,
@@ -12,7 +12,7 @@
           "status": "ok",
           "count": 1227,
           "latestCloseUTC": "2026-11-11T04:45:00.000Z",
-          "ageHours": 0.08,
+          "ageHours": 0.09,
           "close": 9.611,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -76,7 +76,7 @@
           "status": "ok",
           "count": 1052,
           "latestCloseUTC": "2026-11-11T04:00:00.000Z",
-          "ageHours": 0.83,
+          "ageHours": 0.84,
           "close": 9.616,
           "trend": "上昇",
           "importantHighs": [
@@ -140,7 +140,7 @@
           "status": "ok",
           "count": 593,
           "latestCloseUTC": "2026-11-11T04:00:00.000Z",
-          "ageHours": 0.83,
+          "ageHours": 0.84,
           "close": 9.616,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -204,7 +204,7 @@
           "status": "ok",
           "count": 399,
           "latestCloseUTC": "2026-11-11T00:00:00.000Z",
-          "ageHours": 4.83,
+          "ageHours": 4.84,
           "close": 9.593,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -268,7 +268,7 @@
           "status": "ok",
           "count": 57,
           "latestCloseUTC": "2026-11-09T00:00:00.000Z",
-          "ageHours": 52.83,
+          "ageHours": 52.84,
           "close": 9.559,
           "trend": "下落",
           "importantHighs": [
@@ -334,6 +334,13 @@
           }
         }
       },
+      "charts": {
+        "m15": "charts/zarjpy_m15.svg",
+        "h1": "charts/zarjpy_h1.svg",
+        "h4": "charts/zarjpy_h4.svg",
+        "d1": "charts/zarjpy_d1.svg",
+        "w1": "charts/zarjpy_w1.svg"
+      },
       "errors": []
     },
     "USD/JPY": {
@@ -343,7 +350,7 @@
           "status": "ok",
           "count": 1227,
           "latestCloseUTC": "2026-11-11T04:45:00.000Z",
-          "ageHours": 0.08,
+          "ageHours": 0.09,
           "close": 158.83,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -407,7 +414,7 @@
           "status": "ok",
           "count": 1052,
           "latestCloseUTC": "2026-11-11T04:00:00.000Z",
-          "ageHours": 0.83,
+          "ageHours": 0.84,
           "close": 158.871,
           "trend": "上昇",
           "importantHighs": [
@@ -467,7 +474,7 @@
           "status": "ok",
           "count": 593,
           "latestCloseUTC": "2026-11-11T04:00:00.000Z",
-          "ageHours": 0.83,
+          "ageHours": 0.84,
           "close": 158.871,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -531,7 +538,7 @@
           "status": "ok",
           "count": 399,
           "latestCloseUTC": "2026-11-11T00:00:00.000Z",
-          "ageHours": 4.83,
+          "ageHours": 4.84,
           "close": 158.711,
           "trend": "上昇",
           "importantHighs": [
@@ -595,7 +602,7 @@
           "status": "ok",
           "count": 57,
           "latestCloseUTC": "2026-11-09T00:00:00.000Z",
-          "ageHours": 52.83,
+          "ageHours": 52.84,
           "close": 158.297,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -660,6 +667,13 @@
             "close": 158.711
           }
         }
+      },
+      "charts": {
+        "m15": "charts/usdjpy_m15.svg",
+        "h1": "charts/usdjpy_h1.svg",
+        "h4": "charts/usdjpy_h4.svg",
+        "d1": "charts/usdjpy_d1.svg",
+        "w1": "charts/usdjpy_w1.svg"
       },
       "errors": []
     }
