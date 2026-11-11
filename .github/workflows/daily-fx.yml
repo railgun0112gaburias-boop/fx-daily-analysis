@@ -1,0 +1,49 @@
+name: FX 5 timeframe daily report
+on:
+  schedule:
+    - cron: '7 7 * * *'
+      timezone: 'Asia/Tokyo'
+  workflow_dispatch:
+    inputs:
+      quick_check:
+        description: 'Short connection-only test, not full analysis'
+        required: false
+        default: false
+        type: boolean
+  push:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'package.json'
+      - '.github/workflows/daily-fx.yml'
+permissions:
+  contents: write
+concurrency:
+  group: fx-daily-report
+  cancel-in-progress: false
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      FX_QUICK_CHECK: ${{ (github.event_name == 'push' || inputs.quick_check == true) && '1' || '0' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Run indicator unit tests
+        run: npm test
+      - name: Fetch actual OHLC and compute indicators
+        run: npm run analyze
+      - name: Publish market data report
+        if: success()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/latest.md reports/latest.json
+          git diff --cached --quiet || (git commit -m 'Update daily FX report' && git push)
