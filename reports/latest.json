@@ -1,0 +1,313 @@
+{
+  "generatedUTC": "2026-11-11T03:32:28.538Z",
+  "source": "Dukascopy via dukascopy-node (Bid OHLC)",
+  "quickCheck": true,
+  "marketDataOnly": true,
+  "accountsNotConnected": true,
+  "pairs": {
+    "ZAR/JPY": {
+      "account": "みんなのFX",
+      "frames": {
+        "m15": {
+          "status": "ok",
+          "count": 191,
+          "latestCloseUTC": "2026-11-11T03:30:00.000Z",
+          "ageHours": 0.04,
+          "close": 9.619,
+          "trend": "混在・転換・レンジ",
+          "importantHighs": [
+            {
+              "timestamp": 1794316500000,
+              "price": 9.652
+            },
+            {
+              "timestamp": 1794360600000,
+              "price": 9.627
+            }
+          ],
+          "importantLows": [
+            {
+              "timestamp": 1794340800000,
+              "price": 9.6
+            },
+            {
+              "timestamp": 1794365100000,
+              "price": 9.612
+            }
+          ],
+          "supports": [
+            {
+              "timestamp": 1794241800000,
+              "price": 9.615
+            },
+            {
+              "timestamp": 1794317400000,
+              "price": 9.614
+            },
+            {
+              "timestamp": 1794365100000,
+              "price": 9.612
+            }
+          ],
+          "resistances": [
+            {
+              "timestamp": 1794360600000,
+              "price": 9.627
+            },
+            {
+              "timestamp": 1794247200000,
+              "price": 9.629
+            },
+            {
+              "timestamp": 1794235500000,
+              "price": 9.632
+            }
+          ],
+          "rsi14": 57.31256402851884,
+          "macd12269": {
+            "macd": 0.005721998034900366,
+            "signal": 0.004667289588414598,
+            "histogram": 0.0010547084464857682
+          },
+          "rawCount": 192,
+          "confirmedCount": 191
+        },
+        "h1": {
+          "status": "ok",
+          "count": 71,
+          "latestCloseUTC": "2026-11-11T03:00:00.000Z",
+          "ageHours": 0.54,
+          "close": 9.613,
+          "trend": "混在・転換・レンジ",
+          "importantHighs": [
+            {
+              "timestamp": 1794297600000,
+              "price": 9.666
+            },
+            {
+              "timestamp": 1794340800000,
+              "price": 9.608
+            }
+          ],
+          "importantLows": [
+            {
+              "timestamp": 1794326400000,
+              "price": 9.567
+            },
+            {
+              "timestamp": 1794348000000,
+              "price": 9.57
+            }
+          ],
+          "supports": [
+            {
+              "timestamp": 1794261600000,
+              "price": 9.571
+            },
+            {
+              "timestamp": 1794348000000,
+              "price": 9.57
+            },
+            {
+              "timestamp": 1794326400000,
+              "price": 9.567
+            }
+          ],
+          "resistances": [
+            {
+              "timestamp": 1794232800000,
+              "price": 9.632
+            },
+            {
+              "timestamp": 1794254400000,
+              "price": 9.642
+            },
+            {
+              "timestamp": 1794276000000,
+              "price": 9.653
+            }
+          ],
+          "rsi14": 49.92561767449004,
+          "macd12269": {
+            "macd": -0.005379026817550425,
+            "signal": -0.005816475339336503,
+            "histogram": 0.0004374485217860779
+          },
+          "rawCount": 71,
+          "confirmedCount": 71
+        },
+        "h4": {
+          "status": "insufficient",
+          "count": 23,
+          "reason": "40本未満の確定足",
+          "rawCount": 24,
+          "confirmedCount": 23
+        },
+        "d1": {
+          "status": "insufficient",
+          "count": 6,
+          "reason": "40本未満の確定足",
+          "rawCount": 6,
+          "confirmedCount": 6
+        },
+        "w1": {
+          "status": "insufficient",
+          "count": 1,
+          "reason": "40本未満の確定足",
+          "formingWeek": {
+            "timestamp": 1794182400000,
+            "open": 9.562,
+            "high": 9.666,
+            "low": 9.556,
+            "close": 9.593
+          }
+        }
+      },
+      "errors": []
+    },
+    "USD/JPY": {
+      "account": "GMOクリック証券",
+      "frames": {
+        "m15": {
+          "status": "ok",
+          "count": 191,
+          "latestCloseUTC": "2026-11-11T03:30:00.000Z",
+          "ageHours": 0.04,
+          "close": 158.865,
+          "trend": "上昇",
+          "importantHighs": [
+            {
+              "timestamp": 1794355200000,
+              "price": 158.822
+            },
+            {
+              "timestamp": 1794359700000,
+              "price": 158.958
+            }
+          ],
+          "importantLows": [
+            {
+              "timestamp": 1794356100000,
+              "price": 158.663
+            },
+            {
+              "timestamp": 1794365100000,
+              "price": 158.78
+            }
+          ],
+          "supports": [
+            {
+              "timestamp": 1794365100000,
+              "price": 158.78
+            },
+            {
+              "timestamp": 1794339900000,
+              "price": 158.76
+            },
+            {
+              "timestamp": 1794335400000,
+              "price": 158.758
+            }
+          ],
+          "resistances": [
+            {
+              "timestamp": 1794359700000,
+              "price": 158.958
+            }
+          ],
+          "rsi14": 56.519160556719086,
+          "macd12269": {
+            "macd": 0.033781283626296954,
+            "signal": 0.03662376055620303,
+            "histogram": -0.0028424769299060793
+          },
+          "rawCount": 192,
+          "confirmedCount": 191
+        },
+        "h1": {
+          "status": "ok",
+          "count": 71,
+          "latestCloseUTC": "2026-11-11T03:00:00.000Z",
+          "ageHours": 0.54,
+          "close": 158.801,
+          "trend": "上昇",
+          "importantHighs": [
+            {
+              "timestamp": 1794268800000,
+              "price": 158.123
+            },
+            {
+              "timestamp": 1794337200000,
+              "price": 158.85
+            }
+          ],
+          "importantLows": [
+            {
+              "timestamp": 1794315600000,
+              "price": 158.101
+            },
+            {
+              "timestamp": 1794355200000,
+              "price": 158.663
+            }
+          ],
+          "supports": [
+            {
+              "timestamp": 1794355200000,
+              "price": 158.663
+            },
+            {
+              "timestamp": 1794186000000,
+              "price": 158.133
+            },
+            {
+              "timestamp": 1794315600000,
+              "price": 158.101
+            }
+          ],
+          "resistances": [
+            {
+              "timestamp": 1794337200000,
+              "price": 158.85
+            }
+          ],
+          "rsi14": 68.46567781380685,
+          "macd12269": {
+            "macd": 0.18032971577531498,
+            "signal": 0.17013579472256554,
+            "histogram": 0.010193921052749438
+          },
+          "rawCount": 71,
+          "confirmedCount": 71
+        },
+        "h4": {
+          "status": "insufficient",
+          "count": 23,
+          "reason": "40本未満の確定足",
+          "rawCount": 24,
+          "confirmedCount": 23
+        },
+        "d1": {
+          "status": "insufficient",
+          "count": 6,
+          "reason": "40本未満の確定足",
+          "rawCount": 6,
+          "confirmedCount": 6
+        },
+        "w1": {
+          "status": "insufficient",
+          "count": 1,
+          "reason": "40本未満の確定足",
+          "formingWeek": {
+            "timestamp": 1794182400000,
+            "open": 158.294,
+            "high": 158.85,
+            "low": 157.669,
+            "close": 158.711
+          }
+        }
+      },
+      "errors": []
+    }
+  }
+}
