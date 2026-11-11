@@ -1,0 +1,1 @@
+# fx-daily-analysis
