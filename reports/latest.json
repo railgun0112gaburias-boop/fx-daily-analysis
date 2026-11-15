@@ -1,5 +1,5 @@
 {
-  "generatedUTC": "2026-11-14T22:41:49.260Z",
+  "generatedUTC": "2026-11-15T22:43:26.694Z",
   "source": "Dukascopy via dukascopy-node (Bid OHLC)",
   "quickCheck": false,
   "marketDataOnly": true,
@@ -10,10 +10,10 @@
       "frames": {
         "m15": {
           "status": "ok",
-          "count": 1136,
-          "latestCloseUTC": "2026-11-13T22:00:00.000Z",
-          "ageHours": 24.7,
-          "close": 9.432,
+          "count": 1226,
+          "latestCloseUTC": "2026-11-15T22:30:00.000Z",
+          "ageHours": 0.22,
+          "close": 9.403,
           "trend": "下落",
           "importantHighs": [
             {
@@ -27,26 +27,22 @@
           ],
           "importantLows": [
             {
-              "timestamp": 1794592800000,
-              "price": 9.423
-            },
-            {
               "timestamp": 1794603600000,
               "price": 9.421
+            },
+            {
+              "timestamp": 1794606300000,
+              "price": 9.385
             }
           ],
           "supports": [
             {
-              "timestamp": 1793656800000,
-              "price": 9.426
+              "timestamp": 1793572200000,
+              "price": 9.401
             },
             {
-              "timestamp": 1794592800000,
-              "price": 9.423
-            },
-            {
-              "timestamp": 1794603600000,
-              "price": 9.421
+              "timestamp": 1794606300000,
+              "price": 9.385
             }
           ],
           "resistances": [
@@ -63,20 +59,20 @@
               "price": 9.452
             }
           ],
-          "rsi14": 40.97398854306645,
+          "rsi14": 99.16317724160717,
           "macd12269": {
-            "macd": -0.003285121888129794,
-            "signal": -0.0036803819866151237,
-            "histogram": 0.00039526009848532984
+            "macd": 0.0014474209055652665,
+            "signal": 0.0003587309529715944,
+            "histogram": 0.001088689952593672
           },
-          "rawCount": 1136,
-          "confirmedCount": 1136
+          "rawCount": 1227,
+          "confirmedCount": 1226
         },
         "h1": {
           "status": "ok",
-          "count": 1028,
+          "count": 1004,
           "latestCloseUTC": "2026-11-13T22:00:00.000Z",
-          "ageHours": 24.7,
+          "ageHours": 48.72,
           "close": 9.432,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -133,14 +129,14 @@
             "signal": -0.030706216941021908,
             "histogram": 0.00040599387862269576
           },
-          "rawCount": 1028,
-          "confirmedCount": 1028
+          "rawCount": 1004,
+          "confirmedCount": 1004
         },
         "h4": {
           "status": "ok",
-          "count": 588,
+          "count": 582,
           "latestCloseUTC": "2026-11-14T00:00:00.000Z",
-          "ageHours": 22.7,
+          "ageHours": 46.72,
           "close": 9.432,
           "trend": "下落",
           "importantHighs": [
@@ -197,14 +193,14 @@
             "signal": -0.022235883678780516,
             "histogram": -0.018136784196568806
           },
-          "rawCount": 588,
-          "confirmedCount": 588
+          "rawCount": 582,
+          "confirmedCount": 582
         },
         "d1": {
           "status": "ok",
-          "count": 399,
+          "count": 398,
           "latestCloseUTC": "2026-11-14T00:00:00.000Z",
-          "ageHours": 22.7,
+          "ageHours": 46.72,
           "close": 9.432,
           "trend": "下落",
           "importantHighs": [
@@ -255,20 +251,20 @@
               "price": 9.598
             }
           ],
-          "rsi14": 41.53651589109639,
+          "rsi14": 41.536515891093195,
           "macd12269": {
             "macd": 0.0034067283194811893,
-            "signal": 0.005068848114242023,
-            "histogram": -0.0016621197947608336
+            "signal": 0.005068848114239779,
+            "histogram": -0.0016621197947585898
           },
-          "rawCount": 399,
-          "confirmedCount": 399
+          "rawCount": 398,
+          "confirmedCount": 398
         },
         "w1": {
           "status": "ok",
           "count": 57,
           "latestCloseUTC": "2026-11-09T00:00:00.000Z",
-          "ageHours": 142.7,
+          "ageHours": 166.72,
           "close": 9.559,
           "trend": "下落",
           "importantHighs": [
@@ -348,19 +344,19 @@
       "frames": {
         "m15": {
           "status": "ok",
-          "count": 1136,
-          "latestCloseUTC": "2026-11-13T22:00:00.000Z",
-          "ageHours": 24.7,
-          "close": 159.686,
+          "count": 1226,
+          "latestCloseUTC": "2026-11-15T22:30:00.000Z",
+          "ageHours": 0.22,
+          "close": 159.647,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
             {
-              "timestamp": 1794591900000,
-              "price": 159.943
-            },
-            {
               "timestamp": 1794602700000,
               "price": 159.848
+            },
+            {
+              "timestamp": 1794606300000,
+              "price": 159.825
             }
           ],
           "importantLows": [
@@ -375,19 +371,23 @@
           ],
           "supports": [
             {
-              "timestamp": 1794462300000,
-              "price": 159.659
-            },
-            {
-              "timestamp": 1794551400000,
-              "price": 159.649
-            },
-            {
               "timestamp": 1794458700000,
               "price": 159.638
+            },
+            {
+              "timestamp": 1794473100000,
+              "price": 159.606
+            },
+            {
+              "timestamp": 1794484800000,
+              "price": 159.595
             }
           ],
           "resistances": [
+            {
+              "timestamp": 1794606300000,
+              "price": 159.825
+            },
             {
               "timestamp": 1794602700000,
               "price": 159.848
@@ -395,26 +395,22 @@
             {
               "timestamp": 1794554100000,
               "price": 159.885
-            },
-            {
-              "timestamp": 1794517200000,
-              "price": 159.897
             }
           ],
-          "rsi14": 39.916817273489094,
+          "rsi14": 42.63736875016719,
           "macd12269": {
-            "macd": -0.03458275964032964,
-            "signal": -0.03360092330248769,
-            "histogram": -0.0009818363378419487
+            "macd": -0.010974647206666077,
+            "signal": -0.003934143309985543,
+            "histogram": -0.0070405038966805345
           },
-          "rawCount": 1136,
-          "confirmedCount": 1136
+          "rawCount": 1227,
+          "confirmedCount": 1226
         },
         "h1": {
           "status": "ok",
-          "count": 1028,
+          "count": 1004,
           "latestCloseUTC": "2026-11-13T22:00:00.000Z",
-          "ageHours": 24.7,
+          "ageHours": 48.72,
           "close": 159.686,
           "trend": "下落",
           "importantHighs": [
@@ -465,20 +461,20 @@
               "price": 159.938
             }
           ],
-          "rsi14": 42.75408184117733,
+          "rsi14": 42.61016132104685,
           "macd12269": {
-            "macd": -0.0021259030413887103,
-            "signal": 0.029946459951808824,
-            "histogram": -0.03207236299319753
+            "macd": -0.0019219887284975812,
+            "signal": 0.030088576558088075,
+            "histogram": -0.032010565286585656
           },
-          "rawCount": 1028,
-          "confirmedCount": 1028
+          "rawCount": 1004,
+          "confirmedCount": 1004
         },
         "h4": {
           "status": "ok",
-          "count": 588,
+          "count": 582,
           "latestCloseUTC": "2026-11-14T00:00:00.000Z",
-          "ageHours": 22.7,
+          "ageHours": 46.72,
           "close": 159.686,
           "trend": "上昇",
           "importantHighs": [
@@ -535,14 +531,14 @@
             "signal": 0.3775013160505417,
             "histogram": -0.03668600013114165
           },
-          "rawCount": 588,
-          "confirmedCount": 588
+          "rawCount": 582,
+          "confirmedCount": 582
         },
         "d1": {
           "status": "ok",
-          "count": 399,
+          "count": 398,
           "latestCloseUTC": "2026-11-14T00:00:00.000Z",
-          "ageHours": 22.7,
+          "ageHours": 46.72,
           "close": 159.686,
           "trend": "上昇",
           "importantHighs": [
@@ -593,20 +589,20 @@
               "price": 160.392
             }
           ],
-          "rsi14": 64.406356567047,
+          "rsi14": 64.40635656704386,
           "macd12269": {
             "macd": 0.45159649555583314,
-            "signal": 0.24850424656628217,
-            "histogram": 0.20309224898955097
+            "signal": 0.2485042465662789,
+            "histogram": 0.20309224898955425
           },
-          "rawCount": 399,
-          "confirmedCount": 399
+          "rawCount": 398,
+          "confirmedCount": 398
         },
         "w1": {
           "status": "ok",
           "count": 57,
           "latestCloseUTC": "2026-11-09T00:00:00.000Z",
-          "ageHours": 142.7,
+          "ageHours": 166.72,
           "close": 158.297,
           "trend": "混在・転換・レンジ",
           "importantHighs": [

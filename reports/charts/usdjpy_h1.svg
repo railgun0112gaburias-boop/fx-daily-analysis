@@ -2,8 +2,8 @@
 <rect width="1180" height="540" fill="#101b2b"/>
 <rect x="83" y="90" width="811" height="383" fill="#132235" rx="4"/>
 <text x="83" y="37" fill="#f2f7ff" font-size="23" font-weight="700" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">USD/JPY   1時間足   |   Bid OHLC・確定足のみ</text>
-<text x="83" y="61" fill="#9fb1c8" font-size="14" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">データ生成 2026/11/15 07:41 JST　 /　最新確定 2026/11/14 07:00 JST</text>
-<text x="83" y="80" fill="#afbbcc" font-size="13" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">ダウ 下落　RSI14 42.8　MACD -0.0021</text>
+<text x="83" y="61" fill="#9fb1c8" font-size="14" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">データ生成 2026/11/16 07:43 JST　 /　最新確定 2026/11/14 07:00 JST</text>
+<text x="83" y="80" fill="#afbbcc" font-size="13" font-weight="400" text-anchor="start" font-family="Arial, Noto Sans JP, sans-serif">ダウ 下落　RSI14 42.6　MACD -0.0019</text>
 <line x1="83" y1="90" x2="894" y2="90" stroke="#2a3c51" stroke-width="0.8" stroke-dasharray="3,6" />
 <text x="74" y="94" fill="#99abc0" font-size="12" font-weight="400" text-anchor="end" font-family="Arial, Noto Sans JP, sans-serif">160.403</text>
 <line x1="83" y1="153.83333333333334" x2="894" y2="153.83333333333334" stroke="#2a3c51" stroke-width="0.8" stroke-dasharray="3,6" />
@@ -69,7 +69,7 @@
 <line x1="233.035" y1="369.572853072853" x2="233.035" y2="380.74433591100416" stroke="#ff7d7d" stroke-width="1.2" />
 <rect x="230.52" y="377.50" width="5.03" height="2.08" fill="#ff7d7d" rx=".5"/>
 <line x1="241.14499999999998" y1="330.21286121286136" x2="241.14499999999998" y2="389.05799755799825" stroke="#2aceb7" stroke-width="1.2" />
-<rect x="238.63" y="335.15" width="5.03" height="44.30" fill="#2aceb7" rx=".5"/>
+<rect x="238.63" y="335.15" width="5.03" height="43.65" fill="#2aceb7" rx=".5"/>
 <line x1="249.255" y1="310.9875186541859" x2="249.255" y2="343.4627594627601" stroke="#2aceb7" stroke-width="1.2" />
 <rect x="246.74" y="313.98" width="5.03" height="20.91" fill="#2aceb7" rx=".5"/>
 <line x1="257.365" y1="311.2473205806557" x2="257.365" y2="331.3819698819719" stroke="#2aceb7" stroke-width="1.2" />
@@ -92,10 +92,10 @@
 <rect x="319.73" y="308.00" width="5.03" height="1.82" fill="#ff7d7d" rx=".5"/>
 <line x1="330.355" y1="291.8920770587454" x2="330.355" y2="316.05365622032184" stroke="#2aceb7" stroke-width="1.2" />
 <rect x="327.84" y="298.26" width="5.03" height="11.17" fill="#2aceb7" rx=".5"/>
-<line x1="338.465" y1="277.73287206620586" x2="338.465" y2="298.387125220458" stroke="#2aceb7" stroke-width="1.2" />
-<rect x="335.95" y="291.24" width="5.03" height="7.14" fill="#2aceb7" rx=".5"/>
+<line x1="338.465" y1="277.73287206620586" x2="338.465" y2="298.387125220458" stroke="#ff7d7d" stroke-width="1.2" />
+<rect x="335.95" y="288.51" width="5.03" height="2.73" fill="#ff7d7d" rx=".5"/>
 <line x1="346.575" y1="282.53920770587564" x2="346.575" y2="300.8552435219103" stroke="#ff7d7d" stroke-width="1.2" />
-<rect x="344.06" y="291.11" width="5.03" height="7.01" fill="#ff7d7d" rx=".5"/>
+<rect x="344.06" y="285.27" width="5.03" height="12.86" fill="#ff7d7d" rx=".5"/>
 <line x1="354.685" y1="286.69603852937087" x2="354.685" y2="300.3356396689744" stroke="#2aceb7" stroke-width="1.2" />
 <rect x="352.17" y="289.03" width="5.03" height="9.35" fill="#2aceb7" rx=".5"/>
 <line x1="362.79499999999996" y1="288.90435490435334" x2="362.79499999999996" y2="304.23266856600344" stroke="#ff7d7d" stroke-width="1.2" />
@@ -117,7 +117,7 @@
 <line x1="427.67499999999995" y1="246.4267399267385" x2="427.67499999999995" y2="259.9364401031071" stroke="#2aceb7" stroke-width="1.2" />
 <rect x="425.16" y="246.69" width="5.03" height="10.65" fill="#2aceb7" rx=".5"/>
 <line x1="435.78499999999997" y1="194.72615655948886" x2="435.78499999999997" y2="248.5051553384898" stroke="#2aceb7" stroke-width="1.2" />
-<rect x="433.27" y="199.79" width="5.03" height="46.76" fill="#2aceb7" rx=".5"/>
+<rect x="433.27" y="199.79" width="5.03" height="46.89" fill="#2aceb7" rx=".5"/>
 <line x1="443.895" y1="172.51309184642508" x2="443.895" y2="204.98833265499928" stroke="#2aceb7" stroke-width="1.2" />
 <rect x="441.38" y="174.59" width="5.03" height="25.20" fill="#2aceb7" rx=".5"/>
 <line x1="452.005" y1="156.27547144213796" x2="452.005" y2="186.41249491249476" stroke="#2aceb7" stroke-width="1.2" />
@@ -165,7 +165,7 @@
 <line x1="622.3149999999999" y1="179.65764482431229" x2="622.3149999999999" y2="194.98595848595866" stroke="#ff7d7d" stroke-width="1.2" />
 <rect x="619.80" y="184.59" width="5.03" height="4.94" fill="#ff7d7d" rx=".5"/>
 <line x1="630.425" y1="169.2655677655669" x2="630.425" y2="199.79229412562847" stroke="#2aceb7" stroke-width="1.2" />
-<rect x="627.91" y="180.70" width="5.03" height="8.96" fill="#2aceb7" rx=".5"/>
+<rect x="627.91" y="178.23" width="5.03" height="11.43" fill="#2aceb7" rx=".5"/>
 <line x1="638.535" y1="158.87349070682524" x2="638.535" y2="197.84377967711208" stroke="#2aceb7" stroke-width="1.2" />
 <rect x="636.02" y="159.65" width="5.03" height="21.04" fill="#2aceb7" rx=".5"/>
 <line x1="646.645" y1="144.5843847510508" x2="646.645" y2="163.29012345679024" stroke="#2aceb7" stroke-width="1.2" />
@@ -201,7 +201,7 @@
 <line x1="768.295" y1="117.82478632478708" x2="768.295" y2="187.97130647130638" stroke="#ff7d7d" stroke-width="1.2" />
 <rect x="765.78" y="146.92" width="5.03" height="24.42" fill="#ff7d7d" rx=".5"/>
 <line x1="776.405" y1="157.31467914801362" x2="776.405" y2="176.9297245963901" stroke="#2aceb7" stroke-width="1.2" />
-<rect x="773.89" y="161.86" width="5.03" height="9.35" fill="#2aceb7" rx=".5"/>
+<rect x="773.89" y="161.86" width="5.03" height="2.99" fill="#2aceb7" rx=".5"/>
 <line x1="784.515" y1="149.00101750101584" x2="784.515" y2="165.36853886853785" stroke="#2aceb7" stroke-width="1.2" />
 <rect x="782.00" y="154.20" width="5.03" height="7.79" fill="#2aceb7" rx=".5"/>
 <line x1="792.625" y1="149.3907203907206" x2="792.625" y2="163.0303215303204" stroke="#ff7d7d" stroke-width="1.2" />
@@ -223,7 +223,7 @@
 <line x1="857.505" y1="149.78042328042164" x2="857.505" y2="159.00339167005646" stroke="#ff7d7d" stroke-width="1.2" />
 <rect x="854.99" y="150.82" width="5.03" height="1.20" fill="#ff7d7d" rx=".5"/>
 <line x1="865.6149999999999" y1="151.85883869217292" x2="865.6149999999999" y2="204.8584316917644" stroke="#ff7d7d" stroke-width="1.2" />
-<rect x="863.10" y="151.99" width="5.03" height="28.32" fill="#ff7d7d" rx=".5"/>
+<rect x="863.10" y="151.99" width="5.03" height="27.15" fill="#ff7d7d" rx=".5"/>
 <line x1="873.7249999999999" y1="171.2140822140833" x2="873.7249999999999" y2="182.5154660154657" stroke="#2aceb7" stroke-width="1.2" />
 <rect x="871.21" y="171.73" width="5.03" height="8.70" fill="#2aceb7" rx=".5"/>
 <line x1="881.8349999999999" y1="162.1210147876797" x2="881.8349999999999" y2="177.31942748609487" stroke="#2aceb7" stroke-width="1.2" />
