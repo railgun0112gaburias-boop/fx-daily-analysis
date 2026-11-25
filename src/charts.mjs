@@ -12,12 +12,12 @@ const jst=(ms,short=false)=>new Intl.DateTimeFormat('ja-JP',{
 const fmt=(p,symbol)=>Number(p).toFixed(symbol==='ZAR/JPY'?4:3);
 const line=(x1,y1,x2,y2,color,width=1,dash='')=>'<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+color+'" stroke-width="'+width+'" '+(dash?'stroke-dasharray="'+dash+'" ':'')+'/>';
 const text=(x,y,value,{fill='#c8d4e2',size=13,weight=400,anchor='start'}={})=>'<text x="'+x+'" y="'+y+'" fill="'+fill+'" font-size="'+size+'" font-weight="'+weight+'" text-anchor="'+anchor+'" font-family="Arial, Noto Sans JP, sans-serif">'+esc(value)+'</text>';
-export function renderAnnotatedChart({symbol,timeframe,candles,summary,generatedUTC}){
+export function renderAnnotatedChart({symbol,timeframe,candles,summary,generatedUTC,source='市場参照Bid OHLC',account=''}){
   if(!Object.hasOwn(tfLabels,timeframe))throw Error('Unsupported chart timeframe '+timeframe);
   if(!Array.isArray(candles)||candles.length<4)throw Error('Not enough confirmed candles to chart');
   if(!summary||summary.status!=='ok')throw Error('No verified technical summary');
   const cs=candles.slice(-(periods[timeframe]||100));
-  const W=1180,H=540,L=83,R=286,T=90,B=67,X=W-R,plotW=X-L,plotH=H-T-B;
+  const W=1180,H=620,L=83,R=286,T=90,B=147,X=W-R,plotW=X-L,plotH=H-T-B;
   const lows=cs.map(c=>c.low),highs=cs.map(c=>c.high);
   let lo=Math.min(...lows),hi=Math.max(...highs);
   const pad=Math.max((hi-lo)*.085,symbol==='ZAR/JPY'?.002:.018);
@@ -27,6 +27,7 @@ export function renderAnnotatedChart({symbol,timeframe,candles,summary,generated
   const x=i=>L+(i+.5)*step;
   const candleW=Math.max(2,Math.min(8,step*.62));
   let out=['<svg xmlns="http://www.w3.org/2000/svg" width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(symbol+' '+tfLabels[timeframe]+' 注釈付きローソク足チャート')+'">'];
+  out.push('<metadata>'+esc(JSON.stringify({symbol,timeframe,generatedUTC,latestCloseUTC:summary.latestCloseUTC,source,account,priceType:'BID'}))+'</metadata>');
   out.push('<rect width="'+W+'" height="'+H+'" fill="#101b2b"/>');
   out.push('<rect x="'+L+'" y="'+T+'" width="'+plotW+'" height="'+plotH+'" fill="#132235" rx="4"/>');
   out.push(text(L,37,symbol+'   '+tfLabels[timeframe]+'   |   Bid OHLC・確定足のみ',{fill:'#f2f7ff',size:23,weight:700}));
@@ -40,7 +41,7 @@ export function renderAnnotatedChart({symbol,timeframe,candles,summary,generated
   for(let i=0;i<=5;i++){
     const ci=Math.min(cs.length-1,Math.floor(i*(cs.length-1)/5)),xx=x(ci);
     out.push(line(xx,T,xx,T+plotH,'#23364a',.7,'3,8'));
-    out.push(text(xx,H-41,jst(cs[ci].timestamp,true),{fill:'#99abc0',size:12,anchor:'middle'}));
+    out.push(text(xx,H-121,jst(cs[ci].timestamp,true),{fill:'#99abc0',size:12,anchor:'middle'}));
   }
   // Candles: bullish = teal, bearish = coral. Close price is horizontal yellow.
   cs.forEach((c,i)=>{
@@ -110,8 +111,12 @@ export function renderAnnotatedChart({symbol,timeframe,candles,summary,generated
     out.push('<rect x="'+(X+18)+'" y="'+(ly-13)+'" width="'+(R-32)+'" height="20" fill="#23334a" rx="4"/>');
     out.push(text(X+27,ly+2,m.label+' '+fmt(m.price,symbol)+'   '+m.kind,{fill:m.color,size:12,weight:600}));
   });
-  out.push(text(L,H-16,'● H = 確定スイング高値　● L = 確定スイング安値　R = 抵抗候補　S = 支持候補',{fill:'#a7bad0',size:12}));
-  out.push(text(X+18,H-16,'観察候補：条件未確認なら発注しない',{fill:'#a7bad0',size:11}));
+  const describe=(arr,prefix,n)=>Array.from({length:n},(_,i)=>prefix+(i+1)+' '+(arr?.[i]?fmt(arr[i].price,symbol):'候補なし')).join(' / ');
+  out.push(text(L,H-96,'● H = 確定スイング高値　● L = 確定スイング安値　R = 抵抗候補　S = 支持候補',{fill:'#a7bad0',size:12}));
+  out.push(text(L,H-73,describe(summary.importantHighs,'H',2)+'　｜　'+describe(summary.importantLows,'L',2),{fill:'#c8d4e2',size:12}));
+  out.push(text(L,H-50,describe(summary.supports,'S',3)+'　｜　'+describe(summary.resistances,'R',3),{fill:'#c8d4e2',size:12}));
+  out.push(text(L,H-27,'価格参照：'+source+'　｜　分析対象口座：'+account+'　｜　4時間・日足 UTC / 週足 月曜UTC',{fill:'#a7bad0',size:12}));
+  out.push(text(X+18,H-96,'観察候補：条件未確認なら発注しない',{fill:'#a7bad0',size:11}));
   out.push('</svg>');
   return out.join('\n');
 }
