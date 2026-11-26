@@ -40,6 +40,10 @@ jobs:
           node-version: '22'
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
+      - name: Install Japanese chart fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
       - name: Run indicator unit tests
         run: npm test
       - name: Fetch actual OHLC and compute indicators

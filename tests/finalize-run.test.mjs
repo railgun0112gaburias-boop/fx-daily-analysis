@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
+import {createHash} from 'node:crypto';
 import {finalizeRun} from '../src/finalize-run.mjs';
 
 const generatedUTC='2026-11-25T22:50:00.000Z';
@@ -21,7 +22,7 @@ async function fixture(t) {
       const latestCloseUTC='2026-11-25T22:00:00.000Z';
       entry.frames[timeframe]={status:'ok',latestCloseUTC,close:symbol==='ZAR/JPY'?9:159,trend:'混在',rsi14:50,macd12269:{macd:0,signal:0},supports:[],resistances:[],importantHighs:[],importantLows:[]};
       const relative=`charts/${instrument}_${timeframe}.svg`;entry.charts[timeframe]=relative;
-      const svg=`<svg xmlns="http://www.w3.org/2000/svg"><metadata>${JSON.stringify({symbol,timeframe,generatedUTC,latestCloseUTC})}</metadata></svg>`;
+      const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620"><metadata>${JSON.stringify({symbol,timeframe,generatedUTC,latestCloseUTC})}</metadata><rect width="1180" height="620" fill="#101b2b"/><text x="10" y="30">確定高値 ${symbol}</text></svg>`;
       await fs.writeFile(path.join(reportsDir,relative),svg);
     }
   }
@@ -34,8 +35,17 @@ test('publishes a verified current attempt with all 10 matching charts',async t=
   const result=await finalizeRun({...context,reportsDir});
   assert.equal(result.status,'success');assert.equal(result.publishable,true);assert.equal(result.failed,false);
   assert.equal(result.chartCount,10);
+  assert.equal(result.pngChartCount,10);
   const markdown=await fs.readFile(path.join(reportsDir,'latest.md'),'utf8');
   assert.match(markdown,/ZAR\/JPY（みんなのFX）/);assert.match(markdown,/USD\/JPY（GMOクリック証券）/);
+  assert.match(markdown,/!\[ZAR\/JPY 注釈付き4時間足\]\(\.\/charts\/zarjpy_h4\.png\)/);
+  const report=JSON.parse(await fs.readFile(path.join(reportsDir,'latest.json'),'utf8'));
+  assert.equal(report.pairs['ZAR/JPY'].chartArtifacts.h4.generatedUTC,generatedUTC);
+  assert.equal(report.pairs['ZAR/JPY'].chartArtifacts.h4.width,2360);
+  assert.equal(report.pairs['ZAR/JPY'].chartArtifacts.h4.height,1240);
+  const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
+  assert.equal(report.pairs['ZAR/JPY'].chartArtifacts.h4.sourceSvgSha256,hash(await fs.readFile(path.join(reportsDir,'charts/zarjpy_h4.svg'))));
+  assert.equal(report.pairs['ZAR/JPY'].chartArtifacts.h4.pngSha256,hash(await fs.readFile(path.join(reportsDir,'charts/zarjpy_h4.png'))));
 });
 
 test('a failed run replaces an old success snapshot and removes its images',async t=>{
@@ -54,6 +64,7 @@ test('a partial run retains only current usable charts and rejects mismatched im
   const {reportsDir,report}=await fixture(t);
   report.pairs['ZAR/JPY'].frames.m15={status:'unavailable',error:'HTTP 403'};
   report.pairs['ZAR/JPY'].errors=['m15: HTTP 403'];
+  await fs.writeFile(path.join(reportsDir,'charts/zarjpy_m15.png'),'old PNG');
   await fs.writeFile(path.join(reportsDir,'latest.json'),JSON.stringify(report));
   const usdChart=path.join(reportsDir,'charts/usdjpy_h4.svg');
   const svg=await fs.readFile(usdChart,'utf8');
@@ -65,6 +76,7 @@ test('a partial run retains only current usable charts and rejects mismatched im
   assert.equal(actual.pairs['ZAR/JPY'].charts.m15,undefined);assert.equal(actual.pairs['USD/JPY'].charts.h4,undefined);
   const files=await fs.readdir(path.join(reportsDir,'charts'));
   assert.equal(files.includes('zarjpy_m15.svg'),false);assert.equal(files.includes('usdjpy_h4.svg'),false);
+  assert.equal(files.includes('zarjpy_m15.png'),false);
 });
 
 test('missing or foreign-attempt results cannot publish old successful data',async t=>{
