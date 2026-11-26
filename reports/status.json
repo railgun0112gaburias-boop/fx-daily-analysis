@@ -1,14 +1,15 @@
 {
-  "generatedUTC": "2026-11-25T23:00:02.500Z",
-  "runStartedUTC": "2026-11-25T22:58:56Z",
-  "runId": "45717677372",
+  "generatedUTC": "2026-11-26T05:39:33.299Z",
+  "runStartedUTC": "2026-11-26T05:38:16Z",
+  "runId": "45762887101",
   "runAttempt": "1",
-  "runUrl": "https://github.com/railgun0112gaburias-boop/fx-daily-analysis/actions/runs/45717677372",
+  "runUrl": "https://github.com/railgun0112gaburias-boop/fx-daily-analysis/actions/runs/45762887101",
   "status": "success",
   "analysisOutcome": "success",
-  "reportGeneratedUTC": "2026-11-25T23:00:02.434Z",
+  "reportGeneratedUTC": "2026-11-26T05:39:33.203Z",
   "availableFrames": 10,
   "closedFrames": 0,
   "chartCount": 10,
+  "pngChartCount": 10,
   "errors": []
 }
