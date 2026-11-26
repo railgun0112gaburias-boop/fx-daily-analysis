@@ -3,6 +3,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
+import {renderChartPng} from './png-charts.mjs';
 
 const frames = ['m15','h1','h4','d1','w1'];
 const pairs = [
@@ -73,9 +74,10 @@ function markdown(report,status) {
   for(const pair of pairs) {
     const entry=report.pairs[pair.symbol];
     lines.push(`## ${pair.symbol}（${pair.account}）`,'');
-    if(entry.charts.h4) lines.push(`![${pair.symbol} 注釈付き4時間足](./${entry.charts.h4})`,'');
+    if(entry.pngCharts.h4) lines.push(`![${pair.symbol} 注釈付き4時間足](./${entry.pngCharts.h4})`,'');
+    else if(entry.charts.h4) lines.push(`4時間足PNG：未生成。 [確認済みSVGを開く](./${entry.charts.h4})`,'');
     else lines.push('4時間足チャート：未生成／未更新。旧画像は掲載していません。','');
-    const links=frames.filter(frame=>entry.charts[frame]).map(frame=>`[${frameNames[frame]}](./${entry.charts[frame]})`);
+    const links=frames.filter(frame=>entry.charts[frame]).map(frame=>entry.pngCharts[frame]?`[${frameNames[frame]} PNG](./${entry.pngCharts[frame]}) / [SVG](./${entry.charts[frame]})`:`[${frameNames[frame]} SVG](./${entry.charts[frame]})`);
     if(links.length) lines.push(links.join(' / '),'');
     lines.push('| 足 | 状態・最新確定UTC | 終値 | ダウ | RSI14 | MACD / Signal |','|---|---|---|---|---|---|');
     for(const frame of frames) {
@@ -117,10 +119,12 @@ export async function finalizeRun({reportsDir='reports',runStartedUTC,runId=null
   }
   if(analysisOutcome!=='success') reasons.push(`分析ステップの結果：${analysisOutcome}。実行ログを確認してください。`);
   const keep=new Set();
-  let ok=0,closed=0,chartCount=0;
+  let ok=0,closed=0,chartCount=0,pngChartCount=0;
   for(const pair of pairs) {
     const entry=report.pairs[pair.symbol];
     entry.charts??={};entry.errors??=[];
+    // These are regenerated solely from this attempt's verified SVG files.
+    entry.pngCharts={};entry.chartArtifacts={};
     for(const frame of frames) {
       const item=entry.frames[frame];
       if(item.status==='market_closed') closed++;
@@ -137,7 +141,21 @@ export async function finalizeRun({reportsDir='reports',runStartedUTC,runId=null
       if(error) {
         item.chartError=error;delete entry.charts[frame];
         entry.errors.push(`${frame}: ${error}`);
-      } else { keep.add(path.basename(relative));chartCount++;delete item.chartError; }
+      } else {
+        keep.add(path.basename(relative));chartCount++;delete item.chartError;
+        const pngRelative=relative.replace(/\.svg$/,'.png');
+        try {
+          const artifact=await renderChartPng(path.join(reportsDir,relative),path.join(reportsDir,pngRelative),{
+            symbol:pair.symbol,timeframe:frame,generatedUTC:report.generatedUTC,latestCloseUTC:item.latestCloseUTC,
+            svg:relative,png:pngRelative
+          });
+          entry.pngCharts[frame]=pngRelative;entry.chartArtifacts[frame]=artifact;
+          keep.add(path.basename(pngRelative));pngChartCount++;
+        } catch(error) {
+          item.chartError='PNG生成失敗：'+error.message;
+          entry.errors.push(`${frame}: ${item.chartError}`);
+        }
+      }
     }
     // Unknown references are not permitted, even if no renderer used them.
     entry.charts=Object.fromEntries(frames.filter(frame=>entry.charts[frame]).map(frame=>[frame,entry.charts[frame]]));
@@ -145,13 +163,13 @@ export async function finalizeRun({reportsDir='reports',runStartedUTC,runId=null
   const chartDir=path.join(reportsDir,'charts');
   await fs.mkdir(chartDir,{recursive:true});
   for(const file of await fs.readdir(chartDir)) if(!keep.has(file)) await fs.rm(path.join(chartDir,file),{recursive:true,force:true});
-  const complete=ok+closed===pairs.length*frames.length&&chartCount===ok;
+  const complete=ok+closed===pairs.length*frames.length&&chartCount===ok&&pngChartCount===ok;
   const hasErrors=Object.values(report.pairs).some(entry=>entry.errors.length>0);
   const healthy=complete&&!hasErrors&&analysisOutcome==='success'&&!problem;
   const status={
     generatedUTC:new Date(now).toISOString(),runStartedUTC,runId,runAttempt,runUrl,
     status:healthy?(closed?'market_closed':'success'):(ok?'partial':'failed'),
-    analysisOutcome,reportGeneratedUTC:report.generatedUTC,availableFrames:ok,closedFrames:closed,chartCount,
+    analysisOutcome,reportGeneratedUTC:report.generatedUTC,availableFrames:ok,closedFrames:closed,chartCount,pngChartCount,
     errors:[...reasons,...pairs.flatMap(pair=>report.pairs[pair.symbol].errors.map(error=>`${pair.symbol}: ${error}`))]
   };
   report.runStatus=status.status;report.runUrl=runUrl;
