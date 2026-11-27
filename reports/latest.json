@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
-  "generatedUTC": "2026-11-27T02:56:06.810Z",
-  "requestedCutoffUTC": "2026-11-27T02:56:06.810Z",
-  "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+  "generatedUTC": "2026-11-27T23:01:33.893Z",
+  "requestedCutoffUTC": "2026-11-27T23:00:24.861Z",
+  "source": "GMO Coin Forex Public API (BID OHLC)",
   "priceType": "BID",
   "sourceURL": "https://api.coin.z.com/fxdocs/",
-  "sourceNotice": "GMOコインの公開参照価格です。ZAR/JPYの分析対象口座はみんなのFX、USD/JPYはGMOクリック証券であり、両口座の配信価格・口座情報ではありません。確定足と形成中の足・取得時点のBid/Askを明確に分離しています。画像は生成時点のスナップショットで連続更新画像ではありません。",
+  "sourceNotice": "市場参照データはGMOコインの配信です。みんなのFX・GMOクリック証券の口座価格ではありません。過去のDukascopy系列とは接続せず、全時間足を同一ソースから再計算します。",
   "boundaries": {
     "m15": "UTC 00/15/30/45 minutes",
     "h1": "UTC hour",
@@ -13,26 +13,18 @@
     "d1": "UTC 00:00 (aggregated from verified 4-hour candles)",
     "w1": "Monday 00:00 UTC (aggregated from UTC daily candles)"
   },
-  "runId": null,
-  "runAttempt": null,
-  "runStartedUTC": "2026-11-27T02:55:54.811Z",
-  "runUrl": null,
+  "runId": "46079943147",
+  "runAttempt": "1",
+  "runStartedUTC": "2026-11-27T23:00:13Z",
   "quickCheck": false,
   "marketDataOnly": true,
   "accountsNotConnected": true,
-  "execution": {
-    "mode": "on_demand_live_snapshot",
-    "sourceCommit": "7bda30c071787fea25ea193e52b2393b36f34a68",
-    "note": "定時外に最新partitionを再取得、検証済み同一ソース履歴へ差分反映。確定指標と形成足を分離し、専用live rendererで現在Bid/Askを重ねています。GitHub Actionsの新規実行ではありません。"
-  },
-  "runStatus": "success",
-  "snapshotNotStreaming": true,
   "pairs": {
     "ZAR/JPY": {
       "account": "みんなのFX",
-      "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+      "source": "GMO Coin Forex Public API (BID OHLC)",
       "priceType": "BID",
-      "marketStatus": "OPEN",
+      "marketStatus": "CLOSE",
       "fetch": {
         "source": "GMO Coin Forex Public API",
         "provider": "GMOコイン",
@@ -41,191 +33,983 @@
         "symbol": "ZAR_JPY",
         "priceType": "BID",
         "accountQuotes": false,
-        "fetchedUTC": "2026-11-27T02:56:06.810Z",
-        "analysisAsOfUTC": "2026-11-27T02:56:06.810Z",
+        "fetchedUTC": "2026-11-27T23:01:00.068Z",
+        "analysisAsOfUTC": "2026-11-27T23:00:24.861Z",
+        "marketStatus": "CLOSE",
+        "marketStatusFetchedUTC": "2026-11-27T23:00:25.503Z",
+        "closedOnly": true,
         "confirmationGraceMs": 120000,
-        "indicatorsClosedOnly": true,
-        "chartsIncludeForming": true,
-        "cacheBaseGeneratedUTC": "2026-11-27T02:27:01.253Z",
+        "requests": 64,
+        "requestAttempts": 64,
         "requestLog": [
           {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261113",
+            "kind": "ZAR_JPY/15min/20261113",
+            "startedUTC": "2026-11-27T23:00:25.503Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-15T22:00:04.212Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:00:26.275Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261114",
+            "kind": "ZAR_JPY/15min/20261114",
+            "startedUTC": "2026-11-27T23:00:26.275Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-14T20:59:59.486Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:26.745Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261115",
+            "kind": "ZAR_JPY/15min/20261115",
+            "startedUTC": "2026-11-27T23:00:26.745Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-15T20:59:59.634Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:27.503Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261116",
+            "kind": "ZAR_JPY/15min/20261116",
+            "startedUTC": "2026-11-27T23:00:27.503Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-16T21:00:03.254Z",
+            "rowCount": 92,
+            "fetchedUTC": "2026-11-27T23:00:27.973Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261117",
+            "kind": "ZAR_JPY/15min/20261117",
+            "startedUTC": "2026-11-27T23:00:27.974Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-17T21:00:02.446Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:00:28.446Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261118",
+            "kind": "ZAR_JPY/15min/20261118",
+            "startedUTC": "2026-11-27T23:00:28.446Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-18T21:00:01.239Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:00:28.911Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261119",
+            "kind": "ZAR_JPY/15min/20261119",
+            "startedUTC": "2026-11-27T23:00:28.911Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-19T21:00:01.637Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:00:29.379Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261120",
+            "kind": "ZAR_JPY/15min/20261120",
+            "startedUTC": "2026-11-27T23:00:29.379Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-22T22:00:05.022Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:00:29.845Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261121",
+            "kind": "ZAR_JPY/15min/20261121",
+            "startedUTC": "2026-11-27T23:00:29.846Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-21T20:59:58.475Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:30.609Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261122",
+            "kind": "ZAR_JPY/15min/20261122",
+            "startedUTC": "2026-11-27T23:00:30.609Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-22T20:59:59.889Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:31.075Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261123",
+            "kind": "ZAR_JPY/15min/20261123",
+            "startedUTC": "2026-11-27T23:00:31.075Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-23T21:00:02.007Z",
+            "rowCount": 92,
+            "fetchedUTC": "2026-11-27T23:00:31.544Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261124",
+            "kind": "ZAR_JPY/15min/20261124",
+            "startedUTC": "2026-11-27T23:00:31.545Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-24T21:00:01.087Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:00:32.289Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261125",
+            "kind": "ZAR_JPY/15min/20261125",
+            "startedUTC": "2026-11-27T23:00:32.289Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-25T21:00:03.520Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:00:33.058Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261126",
+            "kind": "ZAR_JPY/15min/20261126",
+            "startedUTC": "2026-11-27T23:00:33.058Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-26T21:00:01.555Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:00:33.531Z",
+            "ok": true
+          },
+          {
             "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261127",
-            "startedUTC": "2026-11-27T02:55:54.811Z",
-            "fetchedUTC": "2026-11-27T02:56:02.072Z",
-            "responseUTC": "2026-11-27T02:55:55.823Z"
+            "kind": "ZAR_JPY/15min/20261127",
+            "startedUTC": "2026-11-27T23:00:33.531Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-27T20:59:02.081Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:00:33.998Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=15min&date=20261128",
+            "kind": "ZAR_JPY/15min/20261128",
+            "startedUTC": "2026-11-27T23:00:33.998Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-27T23:00:32.335Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:34.462Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261014",
+            "kind": "ZAR_JPY/1hour/20261014",
+            "startedUTC": "2026-11-27T23:00:34.463Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-14T21:00:00.736Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:34.933Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261015",
+            "kind": "ZAR_JPY/1hour/20261015",
+            "startedUTC": "2026-11-27T23:00:34.933Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-15T21:00:01.918Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:35.399Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261016",
+            "kind": "ZAR_JPY/1hour/20261016",
+            "startedUTC": "2026-11-27T23:00:35.399Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-18T22:00:02.655Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:35.869Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261017",
+            "kind": "ZAR_JPY/1hour/20261017",
+            "startedUTC": "2026-11-27T23:00:35.869Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-17T20:59:59.855Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:36.333Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261018",
+            "kind": "ZAR_JPY/1hour/20261018",
+            "startedUTC": "2026-11-27T23:00:36.333Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-18T20:59:59.171Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:36.797Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261019",
+            "kind": "ZAR_JPY/1hour/20261019",
+            "startedUTC": "2026-11-27T23:00:36.797Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-19T21:00:03.610Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:00:37.261Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261020",
+            "kind": "ZAR_JPY/1hour/20261020",
+            "startedUTC": "2026-11-27T23:00:37.261Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-20T21:00:03.458Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:37.729Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261021",
+            "kind": "ZAR_JPY/1hour/20261021",
+            "startedUTC": "2026-11-27T23:00:37.729Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-21T21:00:00.591Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:38.199Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261022",
+            "kind": "ZAR_JPY/1hour/20261022",
+            "startedUTC": "2026-11-27T23:00:38.199Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-22T21:00:00.988Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:38.669Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261023",
+            "kind": "ZAR_JPY/1hour/20261023",
+            "startedUTC": "2026-11-27T23:00:38.669Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-25T22:00:03.620Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:39.136Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261024",
+            "kind": "ZAR_JPY/1hour/20261024",
+            "startedUTC": "2026-11-27T23:00:39.136Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-24T20:59:57.281Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:39.603Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261025",
+            "kind": "ZAR_JPY/1hour/20261025",
+            "startedUTC": "2026-11-27T23:00:39.603Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-25T20:59:58.228Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:40.072Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261026",
+            "kind": "ZAR_JPY/1hour/20261026",
+            "startedUTC": "2026-11-27T23:00:40.072Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-26T21:00:01.415Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:00:40.538Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261027",
+            "kind": "ZAR_JPY/1hour/20261027",
+            "startedUTC": "2026-11-27T23:00:40.538Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-27T21:00:02.778Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:41.007Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261028",
+            "kind": "ZAR_JPY/1hour/20261028",
+            "startedUTC": "2026-11-27T23:00:41.007Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-28T21:00:03.295Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:41.480Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261029",
+            "kind": "ZAR_JPY/1hour/20261029",
+            "startedUTC": "2026-11-27T23:00:41.480Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-29T21:00:03.452Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:41.948Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261030",
+            "kind": "ZAR_JPY/1hour/20261030",
+            "startedUTC": "2026-11-27T23:00:41.948Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-01T22:00:03.574Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:42.413Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261031",
+            "kind": "ZAR_JPY/1hour/20261031",
+            "startedUTC": "2026-11-27T23:00:42.413Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-31T20:59:57.165Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:43.179Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261101",
+            "kind": "ZAR_JPY/1hour/20261101",
+            "startedUTC": "2026-11-27T23:00:43.180Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-01T20:59:57.988Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:43.644Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261102",
+            "kind": "ZAR_JPY/1hour/20261102",
+            "startedUTC": "2026-11-27T23:00:43.644Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-02T21:00:02.332Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:00:44.110Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261103",
+            "kind": "ZAR_JPY/1hour/20261103",
+            "startedUTC": "2026-11-27T23:00:44.111Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-03T21:00:03.406Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:44.874Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261104",
+            "kind": "ZAR_JPY/1hour/20261104",
+            "startedUTC": "2026-11-27T23:00:44.874Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-04T21:00:01.653Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:45.340Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261105",
+            "kind": "ZAR_JPY/1hour/20261105",
+            "startedUTC": "2026-11-27T23:00:45.341Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-05T21:00:00.809Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:45.805Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261106",
+            "kind": "ZAR_JPY/1hour/20261106",
+            "startedUTC": "2026-11-27T23:00:45.805Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-08T22:00:04.369Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:46.567Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261107",
+            "kind": "ZAR_JPY/1hour/20261107",
+            "startedUTC": "2026-11-27T23:00:46.567Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-07T20:59:58.035Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:47.330Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261108",
+            "kind": "ZAR_JPY/1hour/20261108",
+            "startedUTC": "2026-11-27T23:00:47.330Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-08T20:59:59.489Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:48.103Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261109",
+            "kind": "ZAR_JPY/1hour/20261109",
+            "startedUTC": "2026-11-27T23:00:48.103Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-09T21:00:01.300Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:00:48.877Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261110",
+            "kind": "ZAR_JPY/1hour/20261110",
+            "startedUTC": "2026-11-27T23:00:48.877Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-10T21:00:00.874Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:49.350Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261111",
+            "kind": "ZAR_JPY/1hour/20261111",
+            "startedUTC": "2026-11-27T23:00:49.350Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-11T21:00:03.003Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:49.819Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261112",
+            "kind": "ZAR_JPY/1hour/20261112",
+            "startedUTC": "2026-11-27T23:00:49.819Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-12T21:00:00.635Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:50.288Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261113",
+            "kind": "ZAR_JPY/1hour/20261113",
+            "startedUTC": "2026-11-27T23:00:50.288Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-15T22:00:04.221Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:50.752Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261114",
+            "kind": "ZAR_JPY/1hour/20261114",
+            "startedUTC": "2026-11-27T23:00:50.752Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-14T20:59:59.486Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:51.223Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261115",
+            "kind": "ZAR_JPY/1hour/20261115",
+            "startedUTC": "2026-11-27T23:00:51.223Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-15T20:59:57.032Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:51.987Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261116",
+            "kind": "ZAR_JPY/1hour/20261116",
+            "startedUTC": "2026-11-27T23:00:51.987Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-16T21:00:00.265Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:00:52.455Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261117",
+            "kind": "ZAR_JPY/1hour/20261117",
+            "startedUTC": "2026-11-27T23:00:52.455Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-17T21:00:00.259Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:53.225Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261118",
+            "kind": "ZAR_JPY/1hour/20261118",
+            "startedUTC": "2026-11-27T23:00:53.225Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-18T21:00:00.659Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:53.692Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261119",
+            "kind": "ZAR_JPY/1hour/20261119",
+            "startedUTC": "2026-11-27T23:00:53.692Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-19T21:00:01.664Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:54.160Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261120",
+            "kind": "ZAR_JPY/1hour/20261120",
+            "startedUTC": "2026-11-27T23:00:54.160Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-22T22:00:05.040Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:54.927Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261121",
+            "kind": "ZAR_JPY/1hour/20261121",
+            "startedUTC": "2026-11-27T23:00:54.927Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-21T20:59:58.475Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:55.395Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261122",
+            "kind": "ZAR_JPY/1hour/20261122",
+            "startedUTC": "2026-11-27T23:00:55.395Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-22T20:59:57.401Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:55.870Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261123",
+            "kind": "ZAR_JPY/1hour/20261123",
+            "startedUTC": "2026-11-27T23:00:55.870Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-23T21:00:01.427Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:00:56.338Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261124",
+            "kind": "ZAR_JPY/1hour/20261124",
+            "startedUTC": "2026-11-27T23:00:56.338Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-24T21:00:01.459Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:56.807Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261125",
+            "kind": "ZAR_JPY/1hour/20261125",
+            "startedUTC": "2026-11-27T23:00:56.807Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-25T21:00:03.580Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:57.276Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261126",
+            "kind": "ZAR_JPY/1hour/20261126",
+            "startedUTC": "2026-11-27T23:00:57.276Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-26T21:00:01.564Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:57.742Z",
+            "ok": true
           },
           {
             "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261127",
-            "startedUTC": "2026-11-27T02:56:02.380Z",
-            "fetchedUTC": "2026-11-27T02:56:02.837Z",
-            "responseUTC": "2026-11-27T02:55:56.843Z"
+            "kind": "ZAR_JPY/1hour/20261127",
+            "startedUTC": "2026-11-27T23:00:57.742Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-27T20:59:01.907Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:00:58.210Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=1hour&date=20261128",
+            "kind": "ZAR_JPY/1hour/20261128",
+            "startedUTC": "2026-11-27T23:00:58.210Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-27T23:00:57.294Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:00:58.675Z",
+            "ok": true
           },
           {
             "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=4hour&date=2026",
-            "startedUTC": "2026-11-27T02:56:03.138Z",
-            "fetchedUTC": "2026-11-27T02:56:03.740Z",
-            "responseUTC": "2026-11-27T02:56:01.969Z"
+            "kind": "ZAR_JPY/4hour/2026",
+            "startedUTC": "2026-11-27T23:00:58.676Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-27T20:59:02.093Z",
+            "rowCount": 1464,
+            "fetchedUTC": "2026-11-27T23:00:59.594Z",
+            "ok": true
           },
           {
-            "url": "https://forex-api.coin.z.com/public/v1/ticker",
-            "startedUTC": "2026-11-27T02:56:06.624Z",
-            "fetchedUTC": "2026-11-27T02:56:06.810Z",
-            "responseUTC": "2026-11-27T02:56:06.719Z"
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=ZAR_JPY&priceType=BID&interval=4hour&date=2025",
+            "kind": "ZAR_JPY/4hour/2025",
+            "startedUTC": "2026-11-27T23:00:59.597Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-01-01T22:00:03.945Z",
+            "rowCount": 1608,
+            "fetchedUTC": "2026-11-27T23:01:00.064Z",
+            "ok": true
           }
-        ]
-      },
-      "ticker": {
-        "bid": 9.13,
-        "ask": 9.139,
-        "timestamp": "2026-11-27T02:56:06.675471Z",
-        "status": "OPEN"
+        ],
+        "rawCounts": {
+          "m15": 1039,
+          "h1": 783,
+          "h4": 446,
+          "d1": 1787
+        },
+        "rawCountBasis": {
+          "m15": "native 15min",
+          "h1": "native 1hour",
+          "h4": "native 4hour",
+          "d1": "native 4hour input"
+        },
+        "confirmedCounts": {
+          "m15": 1039,
+          "h1": 783,
+          "h4": 445,
+          "d1": 346
+        },
+        "requestedPartitions": {
+          "m15": [
+            "20261113",
+            "20261114",
+            "20261115",
+            "20261116",
+            "20261117",
+            "20261118",
+            "20261119",
+            "20261120",
+            "20261121",
+            "20261122",
+            "20261123",
+            "20261124",
+            "20261125",
+            "20261126",
+            "20261127",
+            "20261128"
+          ],
+          "h1": [
+            "20261014",
+            "20261015",
+            "20261016",
+            "20261017",
+            "20261018",
+            "20261019",
+            "20261020",
+            "20261021",
+            "20261022",
+            "20261023",
+            "20261024",
+            "20261025",
+            "20261026",
+            "20261027",
+            "20261028",
+            "20261029",
+            "20261030",
+            "20261031",
+            "20261101",
+            "20261102",
+            "20261103",
+            "20261104",
+            "20261105",
+            "20261106",
+            "20261107",
+            "20261108",
+            "20261109",
+            "20261110",
+            "20261111",
+            "20261112",
+            "20261113",
+            "20261114",
+            "20261115",
+            "20261116",
+            "20261117",
+            "20261118",
+            "20261119",
+            "20261120",
+            "20261121",
+            "20261122",
+            "20261123",
+            "20261124",
+            "20261125",
+            "20261126",
+            "20261127",
+            "20261128"
+          ],
+          "h4": [
+            "2026"
+          ],
+          "d1": [
+            "2025",
+            "2026"
+          ]
+        },
+        "lookbackStartUTC": {
+          "m15": "2026-11-12T23:00:24.861Z",
+          "h1": "2026-10-13T23:00:24.861Z",
+          "h4": "2026-08-19T23:00:24.861Z",
+          "d1": "2025-10-20T00:00:00.000Z"
+        },
+        "frameSources": {
+          "m15": "native 15min",
+          "h1": "native 1hour",
+          "h4": "native UTC 4hour",
+          "d1": "UTC calendar days aggregated from native UTC 4hour"
+        },
+        "aggregation": "UTC 4h boundaries checked on every source row; UTC daily OHLC uses existing source bars only; no synthetic weekend/holiday candles; first daily date aligned to Monday UTC for complete weekly aggregation.",
+        "datePartition": "Intraday YYYYMMDD changes at 06:00 JST (21:00 UTC); request date = UTC date of timestamp + 3h. Native 4hour requests use YYYY.",
+        "responseTimeNote": "Historical yearly responses may retain an old responsetime; fetchedUTC is the actual retrieval time. Candle freshness is checked from candle close times."
       },
       "frames": {
         "m15": {
-          "status": "ok",
-          "count": 1049,
-          "latestCloseUTC": "2026-11-27T02:45:00.000Z",
-          "ageHours": 0.18,
-          "close": 9.132,
-          "trend": "上昇",
+          "status": "market_closed",
+          "count": 1039,
+          "latestCloseUTC": "2026-11-27T21:00:00.000Z",
+          "ageHours": 2.01,
+          "close": 9.172,
+          "trend": "混在・転換・レンジ",
           "importantHighs": [
             {
-              "timestamp": 1795716900000,
-              "price": 9.081
+              "timestamp": 1795793400000,
+              "price": 9.183
             },
             {
-              "timestamp": 1795724100000,
-              "price": 9.09
+              "timestamp": 1795810500000,
+              "price": 9.182
             }
           ],
           "importantLows": [
             {
-              "timestamp": 1795734000000,
-              "price": 9.048
+              "timestamp": 1795801500000,
+              "price": 9.164
             },
             {
-              "timestamp": 1795737600000,
-              "price": 9.076
+              "timestamp": 1795809600000,
+              "price": 9.176
             }
           ],
           "supports": [
             {
-              "timestamp": 1795725900000,
-              "price": 9.078
+              "timestamp": 1795779900000,
+              "price": 9.167
             },
             {
-              "timestamp": 1795737600000,
-              "price": 9.076
+              "timestamp": 1795796100000,
+              "price": 9.164
             },
             {
-              "timestamp": 1795714200000,
-              "price": 9.074
+              "timestamp": 1795801500000,
+              "price": 9.164
             }
           ],
           "resistances": [
             {
-              "timestamp": 1795491000000,
-              "price": 9.133
+              "timestamp": 1795761900000,
+              "price": 9.182
             },
             {
-              "timestamp": 1795116600000,
-              "price": 9.142
+              "timestamp": 1795810500000,
+              "price": 9.182
             },
             {
-              "timestamp": 1795483800000,
-              "price": 9.143
+              "timestamp": 1795793400000,
+              "price": 9.183
             }
           ],
-          "rsi14": 80.66148563398136,
+          "rsi14": 45.38875985164424,
           "macd12269": {
-            "macd": 0.01220057565535626,
-            "signal": 0.00639281267408204,
-            "histogram": 0.005807762981274221
+            "macd": 0.0003433395700831454,
+            "signal": 0.00020814878832251758,
+            "histogram": 0.00013519078176062784
           },
-          "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+          "expectedCloseUTC": "2026-11-27T22:45:00.000Z",
+          "reason": "未更新/判定不可（取得元市場休場。指標値は最終確定足の参考値）",
+          "source": "GMO Coin Forex Public API (BID OHLC)",
           "priceType": "BID",
-          "confirmedCount": 1049
+          "rawCount": 1039,
+          "rawCountBasis": "native 15min",
+          "confirmedCount": 1039
         },
         "h1": {
-          "status": "ok",
-          "count": 785,
-          "latestCloseUTC": "2026-11-27T02:00:00.000Z",
-          "ageHours": 0.93,
-          "close": 9.107,
+          "status": "market_closed",
+          "count": 783,
+          "latestCloseUTC": "2026-11-27T21:00:00.000Z",
+          "ageHours": 2.01,
+          "close": 9.172,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
-            {
-              "timestamp": 1795705200000,
-              "price": 9.091
-            },
             {
               "timestamp": 1795723200000,
               "price": 9.09
+            },
+            {
+              "timestamp": 1795773600000,
+              "price": 9.206
             }
           ],
           "importantLows": [
             {
-              "timestamp": 1795690800000,
-              "price": 9.032
+              "timestamp": 1795777200000,
+              "price": 9.167
             },
             {
-              "timestamp": 1795734000000,
-              "price": 9.048
+              "timestamp": 1795791600000,
+              "price": 9.154
             }
           ],
           "supports": [
             {
-              "timestamp": 1795471200000,
-              "price": 9.097
+              "timestamp": 1795777200000,
+              "price": 9.167
             },
             {
-              "timestamp": 1795399200000,
-              "price": 9.068
+              "timestamp": 1795791600000,
+              "price": 9.154
             },
             {
-              "timestamp": 1795435200000,
-              "price": 9.065
+              "timestamp": 1795453200000,
+              "price": 9.124
             }
           ],
           "resistances": [
             {
-              "timestamp": 1795528800000,
-              "price": 9.111
+              "timestamp": 1795442400000,
+              "price": 9.199
             },
             {
-              "timestamp": 1795186800000,
-              "price": 9.124
+              "timestamp": 1795773600000,
+              "price": 9.206
             },
             {
-              "timestamp": 1795168800000,
-              "price": 9.125
+              "timestamp": 1795046400000,
+              "price": 9.23
             }
           ],
-          "rsi14": 62.16802583999224,
+          "rsi14": 59.08162927469373,
           "macd12269": {
-            "macd": 0.0071889750461942015,
-            "signal": 0.005661206843157293,
-            "histogram": 0.0015277682030369081
+            "macd": 0.02091692009495638,
+            "signal": 0.024630333043723508,
+            "histogram": -0.0037134129487671266
           },
-          "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+          "expectedCloseUTC": "2026-11-27T22:00:00.000Z",
+          "reason": "未更新/判定不可（取得元市場休場。指標値は最終確定足の参考値）",
+          "source": "GMO Coin Forex Public API (BID OHLC)",
           "priceType": "BID",
-          "confirmedCount": 785
+          "rawCount": 783,
+          "rawCountBasis": "native 1hour",
+          "confirmedCount": 783
         },
         "h4": {
-          "status": "ok",
-          "count": 1458,
-          "latestCloseUTC": "2026-11-27T00:00:00.000Z",
-          "ageHours": 2.93,
-          "close": 9.08,
-          "trend": "混在・転換・レンジ",
+          "status": "market_closed",
+          "count": 445,
+          "latestCloseUTC": "2026-11-27T20:00:00.000Z",
+          "ageHours": 3.01,
+          "close": 9.177,
+          "trend": "上昇",
           "importantHighs": [
-            {
-              "timestamp": 1795492800000,
-              "price": 9.152
-            },
             {
               "timestamp": 1795665600000,
               "price": 9.101
+            },
+            {
+              "timestamp": 1795766400000,
+              "price": 9.206
             }
           ],
           "importantLows": [
@@ -254,33 +1038,37 @@
           ],
           "resistances": [
             {
-              "timestamp": 1795665600000,
-              "price": 9.101
-            },
-            {
-              "timestamp": 1795492800000,
-              "price": 9.152
-            },
-            {
               "timestamp": 1795435200000,
               "price": 9.199
+            },
+            {
+              "timestamp": 1795766400000,
+              "price": 9.206
+            },
+            {
+              "timestamp": 1795075200000,
+              "price": 9.314
             }
           ],
-          "rsi14": 47.206902703636764,
+          "rsi14": 60.385982598512825,
           "macd12269": {
-            "macd": -0.023017207910150717,
-            "signal": -0.034407838833029725,
-            "histogram": 0.011390630922879008
+            "macd": 0.009981285561135422,
+            "signal": -0.010264530938843329,
+            "histogram": 0.020245816499978753
           },
-          "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+          "expectedCloseUTC": "2026-11-27T20:00:00.000Z",
+          "reason": "未更新/判定不可（取得元市場休場。指標値は最終確定足の参考値）",
+          "source": "GMO Coin Forex Public API (BID OHLC)",
           "priceType": "BID",
-          "confirmedCount": 1458
+          "rawCount": 446,
+          "rawCountBasis": "native 4hour",
+          "confirmedCount": 445
         },
         "d1": {
-          "status": "ok",
+          "status": "market_closed",
           "count": 346,
           "latestCloseUTC": "2026-11-27T00:00:00.000Z",
-          "ageHours": 2.93,
+          "ageHours": 23.01,
           "close": 9.08,
           "trend": "下落",
           "importantHighs": [
@@ -337,15 +1125,19 @@
             "signal": -0.09609101249818992,
             "histogram": -0.032199205787778726
           },
-          "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+          "expectedCloseUTC": "2026-11-27T00:00:00.000Z",
+          "reason": "未更新/判定不可（取得元市場休場。指標値は最終確定足の参考値）",
+          "source": "GMO Coin Forex Public API (BID OHLC)",
           "priceType": "BID",
+          "rawCount": 1787,
+          "rawCountBasis": "native 4hour input",
           "confirmedCount": 346
         },
         "w1": {
-          "status": "ok",
+          "status": "market_closed",
           "count": 57,
           "latestCloseUTC": "2026-11-23T00:00:00.000Z",
-          "ageHours": 98.93,
+          "ageHours": 119.01,
           "close": 9.077,
           "trend": "下落",
           "importantHighs": [
@@ -389,488 +1181,29 @@
             "signal": -0.013681676350082926,
             "histogram": -0.06078827864876386
           },
-          "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+          "expectedCloseUTC": "2026-11-23T00:00:00.000Z",
+          "reason": "未更新/判定不可（取得元市場休場。指標値は最終確定足の参考値）",
+          "source": "GMO Coin Forex Public API (BID OHLC)",
           "priceType": "BID",
-          "confirmedCount": 57
+          "formingWeek": {
+            "timestamp": 1795392000000,
+            "open": 9.077,
+            "high": 9.199,
+            "low": 8.967,
+            "close": 9.08
+          }
         }
       },
-      "formingFrames": {
-        "m15": {
-          "status": "unconfirmed",
-          "candles": [
-            {
-              "timestamp": 1795747500000,
-              "open": 9.132,
-              "high": 9.133,
-              "low": 9.129,
-              "close": 9.131
-            }
-          ],
-          "provisionalIndicators": {
-            "status": "ok",
-            "count": 1050,
-            "latestCloseUTC": "2026-11-27T03:00:00.000Z",
-            "ageHours": -0.07,
-            "close": 9.131,
-            "trend": "上昇",
-            "importantHighs": [
-              {
-                "timestamp": 1795716900000,
-                "price": 9.081
-              },
-              {
-                "timestamp": 1795724100000,
-                "price": 9.09
-              }
-            ],
-            "importantLows": [
-              {
-                "timestamp": 1795734000000,
-                "price": 9.048
-              },
-              {
-                "timestamp": 1795737600000,
-                "price": 9.076
-              }
-            ],
-            "supports": [
-              {
-                "timestamp": 1795725900000,
-                "price": 9.078
-              },
-              {
-                "timestamp": 1795737600000,
-                "price": 9.076
-              },
-              {
-                "timestamp": 1795714200000,
-                "price": 9.074
-              }
-            ],
-            "resistances": [
-              {
-                "timestamp": 1795491000000,
-                "price": 9.133
-              },
-              {
-                "timestamp": 1795116600000,
-                "price": 9.142
-              },
-              {
-                "timestamp": 1795483800000,
-                "price": 9.143
-              }
-            ],
-            "rsi14": 79.48618009682964,
-            "macd12269": {
-              "macd": 0.013512400193858909,
-              "signal": 0.007816730178037414,
-              "histogram": 0.005695670015821495
-            }
-          },
-          "sourceFetchedUTC": "2026-11-27T02:56:04.046Z"
-        },
-        "h1": {
-          "status": "unconfirmed",
-          "candles": [
-            {
-              "timestamp": 1795744800000,
-              "open": 9.107,
-              "high": 9.134,
-              "low": 9.107,
-              "close": 9.131
-            }
-          ],
-          "provisionalIndicators": {
-            "status": "ok",
-            "count": 786,
-            "latestCloseUTC": "2026-11-27T03:00:00.000Z",
-            "ageHours": -0.07,
-            "close": 9.131,
-            "trend": "混在・転換・レンジ",
-            "importantHighs": [
-              {
-                "timestamp": 1795705200000,
-                "price": 9.091
-              },
-              {
-                "timestamp": 1795723200000,
-                "price": 9.09
-              }
-            ],
-            "importantLows": [
-              {
-                "timestamp": 1795690800000,
-                "price": 9.032
-              },
-              {
-                "timestamp": 1795734000000,
-                "price": 9.048
-              }
-            ],
-            "supports": [
-              {
-                "timestamp": 1795453200000,
-                "price": 9.124
-              },
-              {
-                "timestamp": 1795471200000,
-                "price": 9.097
-              },
-              {
-                "timestamp": 1795399200000,
-                "price": 9.068
-              }
-            ],
-            "resistances": [
-              {
-                "timestamp": 1795482000000,
-                "price": 9.143
-              },
-              {
-                "timestamp": 1795496400000,
-                "price": 9.152
-              },
-              {
-                "timestamp": 1795442400000,
-                "price": 9.199
-              }
-            ],
-            "rsi14": 67.55645031257484,
-            "macd12269": {
-              "macd": 0.010776574715260168,
-              "signal": 0.006684280417577869,
-              "histogram": 0.004092294297682299
-            }
-          },
-          "sourceFetchedUTC": "2026-11-27T02:56:04.046Z"
-        },
-        "h4": {
-          "status": "unconfirmed",
-          "candles": [
-            {
-              "timestamp": 1795737600000,
-              "open": 9.08,
-              "high": 9.134,
-              "low": 9.076,
-              "close": 9.131
-            }
-          ],
-          "provisionalIndicators": {
-            "status": "ok",
-            "count": 1459,
-            "latestCloseUTC": "2026-11-27T04:00:00.000Z",
-            "ageHours": -1.07,
-            "close": 9.131,
-            "trend": "混在・転換・レンジ",
-            "importantHighs": [
-              {
-                "timestamp": 1795492800000,
-                "price": 9.152
-              },
-              {
-                "timestamp": 1795665600000,
-                "price": 9.101
-              }
-            ],
-            "importantLows": [
-              {
-                "timestamp": 1795608000000,
-                "price": 8.967
-              },
-              {
-                "timestamp": 1795680000000,
-                "price": 9.032
-              }
-            ],
-            "supports": [
-              {
-                "timestamp": 1795435200000,
-                "price": 9.065
-              },
-              {
-                "timestamp": 1795147200000,
-                "price": 9.054
-              },
-              {
-                "timestamp": 1795521600000,
-                "price": 9.049
-              }
-            ],
-            "resistances": [
-              {
-                "timestamp": 1795492800000,
-                "price": 9.152
-              },
-              {
-                "timestamp": 1795435200000,
-                "price": 9.199
-              },
-              {
-                "timestamp": 1795075200000,
-                "price": 9.314
-              }
-            ],
-            "rsi14": 55.294261064464266,
-            "macd12269": {
-              "macd": -0.01645272142178733,
-              "signal": -0.03081681535078125,
-              "histogram": 0.014364093928993918
-            }
-          },
-          "sourceFetchedUTC": "2026-11-27T02:56:04.046Z"
-        },
-        "d1": {
-          "status": "unconfirmed",
-          "candles": [
-            {
-              "timestamp": 1795737600000,
-              "open": 9.08,
-              "high": 9.134,
-              "low": 9.076,
-              "close": 9.131
-            }
-          ],
-          "provisionalIndicators": {
-            "status": "ok",
-            "count": 347,
-            "latestCloseUTC": "2026-11-28T00:00:00.000Z",
-            "ageHours": -21.07,
-            "close": 9.131,
-            "trend": "下落",
-            "importantHighs": [
-              {
-                "timestamp": 1794268800000,
-                "price": 9.662
-              },
-              {
-                "timestamp": 1795392000000,
-                "price": 9.199
-              }
-            ],
-            "importantLows": [
-              {
-                "timestamp": 1795132800000,
-                "price": 8.996
-              },
-              {
-                "timestamp": 1795564800000,
-                "price": 8.967
-              }
-            ],
-            "supports": [
-              {
-                "timestamp": 1764547200000,
-                "price": 9.05
-              },
-              {
-                "timestamp": 1795132800000,
-                "price": 8.996
-              },
-              {
-                "timestamp": 1763424000000,
-                "price": 8.98
-              }
-            ],
-            "resistances": [
-              {
-                "timestamp": 1795392000000,
-                "price": 9.199
-              },
-              {
-                "timestamp": 1793145600000,
-                "price": 9.516
-              },
-              {
-                "timestamp": 1791244800000,
-                "price": 9.595
-              }
-            ],
-            "rsi14": 37.0952361102281,
-            "macd12269": {
-              "macd": -0.12374570165963839,
-              "signal": -0.10162195033047963,
-              "histogram": -0.022123751329158753
-            }
-          },
-          "sourceFetchedUTC": "2026-11-27T02:56:04.046Z"
-        },
-        "w1": {
-          "status": "unconfirmed",
-          "candles": [
-            {
-              "timestamp": 1795392000000,
-              "open": 9.077,
-              "high": 9.199,
-              "low": 8.967,
-              "close": 9.131
-            }
-          ],
-          "provisionalIndicators": {
-            "status": "ok",
-            "count": 58,
-            "latestCloseUTC": "2026-11-30T00:00:00.000Z",
-            "ageHours": -69.07,
-            "close": 9.131,
-            "trend": "下落",
-            "importantHighs": [
-              {
-                "timestamp": 1787529600000,
-                "price": 9.998
-              },
-              {
-                "timestamp": 1793577600000,
-                "price": 9.676
-              }
-            ],
-            "importantLows": [
-              {
-                "timestamp": 1790553600000,
-                "price": 9.413
-              },
-              {
-                "timestamp": 1792972800000,
-                "price": 9.392
-              }
-            ],
-            "supports": [],
-            "resistances": [
-              {
-                "timestamp": 1763337600000,
-                "price": 9.198
-              },
-              {
-                "timestamp": 1793577600000,
-                "price": 9.676
-              },
-              {
-                "timestamp": 1776038400000,
-                "price": 9.77
-              }
-            ],
-            "rsi14": 37.543591424179155,
-            "macd12269": {
-              "macd": -0.09727950198690927,
-              "signal": -0.030401241477448195,
-              "histogram": -0.06687826050946108
-            }
-          },
-          "sourceFetchedUTC": "2026-11-27T02:56:04.046Z"
-        }
-      },
-      "charts": {
-        "m15": "charts/zarjpy_m15.svg",
-        "h1": "charts/zarjpy_h1.svg",
-        "h4": "charts/zarjpy_h4.svg",
-        "d1": "charts/zarjpy_d1.svg",
-        "w1": "charts/zarjpy_w1.svg"
-      },
-      "pngCharts": {
-        "m15": "charts/zarjpy_m15.png",
-        "h1": "charts/zarjpy_h1.png",
-        "h4": "charts/zarjpy_h4.png",
-        "d1": "charts/zarjpy_d1.png",
-        "w1": "charts/zarjpy_w1.png"
-      },
-      "chartArtifacts": {
-        "m15": {
-          "symbol": "ZAR/JPY",
-          "timeframe": "m15",
-          "generatedUTC": "2026-11-27T02:56:06.810Z",
-          "latestCloseUTC": "2026-11-27T02:45:00.000Z",
-          "quoteUTC": "2026-11-27T02:56:06.675471Z",
-          "bid": 9.13,
-          "ask": 9.139,
-          "formingOpenUTC": [
-            "2026-11-27T02:45:00.000Z"
-          ],
-          "width": 2360,
-          "height": 1401,
-          "sourceSvgSha256": "838221a28357e452662d14c24bb6a7a64352e2d639ef8824441735949f136f02",
-          "pngSha256": "109dcf736aa8f4a395ecd73aec320fed72316cf942c875ce3c4585c48839c501",
-          "svg": "charts/zarjpy_m15.svg",
-          "png": "charts/zarjpy_m15.png"
-        },
-        "h1": {
-          "symbol": "ZAR/JPY",
-          "timeframe": "h1",
-          "generatedUTC": "2026-11-27T02:56:06.810Z",
-          "latestCloseUTC": "2026-11-27T02:00:00.000Z",
-          "quoteUTC": "2026-11-27T02:56:06.675471Z",
-          "bid": 9.13,
-          "ask": 9.139,
-          "formingOpenUTC": [
-            "2026-11-27T02:00:00.000Z"
-          ],
-          "width": 2360,
-          "height": 1401,
-          "sourceSvgSha256": "165271bf783a7fd3938133c3b68660eb981d80513ff1d704bfc5ad084a91ce6d",
-          "pngSha256": "c2fe6be57db1166329983f7de1ecd68adecc2d4dc7aefba100b2a12124e9db2a",
-          "svg": "charts/zarjpy_h1.svg",
-          "png": "charts/zarjpy_h1.png"
-        },
-        "h4": {
-          "symbol": "ZAR/JPY",
-          "timeframe": "h4",
-          "generatedUTC": "2026-11-27T02:56:06.810Z",
-          "latestCloseUTC": "2026-11-27T00:00:00.000Z",
-          "quoteUTC": "2026-11-27T02:56:06.675471Z",
-          "bid": 9.13,
-          "ask": 9.139,
-          "formingOpenUTC": [
-            "2026-11-27T00:00:00.000Z"
-          ],
-          "width": 2360,
-          "height": 1401,
-          "sourceSvgSha256": "76d94b64a168d7ebd576acc4e0b1bf50f33e9174ac68348ba947444efe226cd2",
-          "pngSha256": "469778e4ea84b0fe1a71099ff24d9f81459f8826d5a8288f81ece0e32f53d58c",
-          "svg": "charts/zarjpy_h4.svg",
-          "png": "charts/zarjpy_h4.png"
-        },
-        "d1": {
-          "symbol": "ZAR/JPY",
-          "timeframe": "d1",
-          "generatedUTC": "2026-11-27T02:56:06.810Z",
-          "latestCloseUTC": "2026-11-27T00:00:00.000Z",
-          "quoteUTC": "2026-11-27T02:56:06.675471Z",
-          "bid": 9.13,
-          "ask": 9.139,
-          "formingOpenUTC": [
-            "2026-11-27T00:00:00.000Z"
-          ],
-          "width": 2360,
-          "height": 1401,
-          "sourceSvgSha256": "e7d9c4ffb08c7432d02627857b5251bd1945538b898d139db87f49c5a8393341",
-          "pngSha256": "e29b10ed80d327bedbbc6f332cce509a29957e94f4af49174b8d4475d43a4fbe",
-          "svg": "charts/zarjpy_d1.svg",
-          "png": "charts/zarjpy_d1.png"
-        },
-        "w1": {
-          "symbol": "ZAR/JPY",
-          "timeframe": "w1",
-          "generatedUTC": "2026-11-27T02:56:06.810Z",
-          "latestCloseUTC": "2026-11-23T00:00:00.000Z",
-          "quoteUTC": "2026-11-27T02:56:06.675471Z",
-          "bid": 9.13,
-          "ask": 9.139,
-          "formingOpenUTC": [
-            "2026-11-23T00:00:00.000Z"
-          ],
-          "width": 2360,
-          "height": 1401,
-          "sourceSvgSha256": "c18863b59f0d5d65c063ecd3ddb448322952e681c2975750a05978b70cb726fc",
-          "pngSha256": "771de33c33e395ec47820106ce92fcae697265a191d8f5b0b34cc38c9ce012e7",
-          "svg": "charts/zarjpy_w1.svg",
-          "png": "charts/zarjpy_w1.png"
-        }
-      },
-      "errors": []
+      "charts": {},
+      "errors": [],
+      "pngCharts": {},
+      "chartArtifacts": {}
     },
     "USD/JPY": {
       "account": "GMOクリック証券",
-      "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+      "source": "GMO Coin Forex Public API (BID OHLC)",
       "priceType": "BID",
-      "marketStatus": "OPEN",
+      "marketStatus": "CLOSE",
       "fetch": {
         "source": "GMO Coin Forex Public API",
         "provider": "GMOコイン",
@@ -879,183 +1212,975 @@
         "symbol": "USD_JPY",
         "priceType": "BID",
         "accountQuotes": false,
-        "fetchedUTC": "2026-11-27T02:56:06.810Z",
-        "analysisAsOfUTC": "2026-11-27T02:56:06.810Z",
+        "fetchedUTC": "2026-11-27T23:01:33.889Z",
+        "analysisAsOfUTC": "2026-11-27T23:00:24.861Z",
+        "marketStatus": "CLOSE",
+        "marketStatusFetchedUTC": "2026-11-27T23:00:25.503Z",
+        "closedOnly": true,
         "confirmationGraceMs": 120000,
-        "indicatorsClosedOnly": true,
-        "chartsIncludeForming": true,
-        "cacheBaseGeneratedUTC": "2026-11-27T02:27:01.253Z",
+        "requests": 64,
+        "requestAttempts": 64,
         "requestLog": [
           {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261113",
+            "kind": "USD_JPY/15min/20261113",
+            "startedUTC": "2026-11-27T23:01:00.075Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-15T22:00:04.527Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:01:00.824Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261114",
+            "kind": "USD_JPY/15min/20261114",
+            "startedUTC": "2026-11-27T23:01:00.824Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-14T20:59:57.072Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:01.592Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261115",
+            "kind": "USD_JPY/15min/20261115",
+            "startedUTC": "2026-11-27T23:01:01.592Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-15T20:59:59.638Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:02.056Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261116",
+            "kind": "USD_JPY/15min/20261116",
+            "startedUTC": "2026-11-27T23:01:02.056Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-16T21:00:01.438Z",
+            "rowCount": 92,
+            "fetchedUTC": "2026-11-27T23:01:02.531Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261117",
+            "kind": "USD_JPY/15min/20261117",
+            "startedUTC": "2026-11-27T23:01:02.531Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-17T21:00:00.530Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:01:02.997Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261118",
+            "kind": "USD_JPY/15min/20261118",
+            "startedUTC": "2026-11-27T23:01:02.997Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-18T21:00:02.562Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:01:03.462Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261119",
+            "kind": "USD_JPY/15min/20261119",
+            "startedUTC": "2026-11-27T23:01:03.462Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-19T21:00:02.706Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:01:03.929Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261120",
+            "kind": "USD_JPY/15min/20261120",
+            "startedUTC": "2026-11-27T23:01:03.930Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-22T22:00:05.003Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:01:04.394Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261121",
+            "kind": "USD_JPY/15min/20261121",
+            "startedUTC": "2026-11-27T23:01:04.394Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-21T20:59:58.472Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:04.862Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261122",
+            "kind": "USD_JPY/15min/20261122",
+            "startedUTC": "2026-11-27T23:01:04.862Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-22T20:59:57.392Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:05.623Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261123",
+            "kind": "USD_JPY/15min/20261123",
+            "startedUTC": "2026-11-27T23:01:05.623Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-23T21:00:01.982Z",
+            "rowCount": 92,
+            "fetchedUTC": "2026-11-27T23:01:06.087Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261124",
+            "kind": "USD_JPY/15min/20261124",
+            "startedUTC": "2026-11-27T23:01:06.087Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-24T21:00:01.221Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:01:06.558Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261125",
+            "kind": "USD_JPY/15min/20261125",
+            "startedUTC": "2026-11-27T23:01:06.558Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-25T21:00:02.904Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:01:07.031Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261126",
+            "kind": "USD_JPY/15min/20261126",
+            "startedUTC": "2026-11-27T23:01:07.031Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-26T21:00:01.890Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:01:07.501Z",
+            "ok": true
+          },
+          {
             "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261127",
-            "startedUTC": "2026-11-27T02:56:04.057Z",
-            "fetchedUTC": "2026-11-27T02:56:04.521Z",
-            "responseUTC": "2026-11-27T02:56:02.817Z"
+            "kind": "USD_JPY/15min/20261127",
+            "startedUTC": "2026-11-27T23:01:07.501Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-27T20:59:01.798Z",
+            "rowCount": 96,
+            "fetchedUTC": "2026-11-27T23:01:07.969Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=15min&date=20261128",
+            "kind": "USD_JPY/15min/20261128",
+            "startedUTC": "2026-11-27T23:01:07.969Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-27T23:01:05.768Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:08.435Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261014",
+            "kind": "USD_JPY/1hour/20261014",
+            "startedUTC": "2026-11-27T23:01:08.436Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-14T21:00:01.028Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:08.904Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261015",
+            "kind": "USD_JPY/1hour/20261015",
+            "startedUTC": "2026-11-27T23:01:08.904Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-15T21:00:03.045Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:09.374Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261016",
+            "kind": "USD_JPY/1hour/20261016",
+            "startedUTC": "2026-11-27T23:01:09.374Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-18T22:00:04.974Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:09.839Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261017",
+            "kind": "USD_JPY/1hour/20261017",
+            "startedUTC": "2026-11-27T23:01:09.839Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-17T20:59:58.271Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:10.302Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261018",
+            "kind": "USD_JPY/1hour/20261018",
+            "startedUTC": "2026-11-27T23:01:10.302Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-18T20:59:59.172Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:10.769Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261019",
+            "kind": "USD_JPY/1hour/20261019",
+            "startedUTC": "2026-11-27T23:01:10.769Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-19T21:00:02.996Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:01:11.231Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261020",
+            "kind": "USD_JPY/1hour/20261020",
+            "startedUTC": "2026-11-27T23:01:11.232Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-20T21:00:00.906Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:11.698Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261021",
+            "kind": "USD_JPY/1hour/20261021",
+            "startedUTC": "2026-11-27T23:01:11.698Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-21T21:00:02.400Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:12.164Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261022",
+            "kind": "USD_JPY/1hour/20261022",
+            "startedUTC": "2026-11-27T23:01:12.164Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-22T21:00:00.838Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:12.633Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261023",
+            "kind": "USD_JPY/1hour/20261023",
+            "startedUTC": "2026-11-27T23:01:12.633Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-25T22:00:03.909Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:13.101Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261024",
+            "kind": "USD_JPY/1hour/20261024",
+            "startedUTC": "2026-11-27T23:01:13.101Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-24T20:59:57.293Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:13.569Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261025",
+            "kind": "USD_JPY/1hour/20261025",
+            "startedUTC": "2026-11-27T23:01:13.569Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-25T20:59:58.222Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:14.031Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261026",
+            "kind": "USD_JPY/1hour/20261026",
+            "startedUTC": "2026-11-27T23:01:14.031Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-26T21:00:01.741Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:01:14.803Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261027",
+            "kind": "USD_JPY/1hour/20261027",
+            "startedUTC": "2026-11-27T23:01:14.803Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-27T21:00:03.216Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:15.266Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261028",
+            "kind": "USD_JPY/1hour/20261028",
+            "startedUTC": "2026-11-27T23:01:15.266Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-28T21:00:02.509Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:15.732Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261029",
+            "kind": "USD_JPY/1hour/20261029",
+            "startedUTC": "2026-11-27T23:01:15.732Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-29T21:00:00.617Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:16.212Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261030",
+            "kind": "USD_JPY/1hour/20261030",
+            "startedUTC": "2026-11-27T23:01:16.212Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-01T22:00:03.363Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:16.673Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261031",
+            "kind": "USD_JPY/1hour/20261031",
+            "startedUTC": "2026-11-27T23:01:16.673Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-10-31T20:59:59.801Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:17.147Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261101",
+            "kind": "USD_JPY/1hour/20261101",
+            "startedUTC": "2026-11-27T23:01:17.147Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-01T20:59:59.363Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:17.921Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261102",
+            "kind": "USD_JPY/1hour/20261102",
+            "startedUTC": "2026-11-27T23:01:17.921Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-02T21:00:02.794Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:01:18.387Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261103",
+            "kind": "USD_JPY/1hour/20261103",
+            "startedUTC": "2026-11-27T23:01:18.387Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-03T21:00:03.164Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:18.854Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261104",
+            "kind": "USD_JPY/1hour/20261104",
+            "startedUTC": "2026-11-27T23:01:18.854Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-04T21:00:00.591Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:19.317Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261105",
+            "kind": "USD_JPY/1hour/20261105",
+            "startedUTC": "2026-11-27T23:01:19.317Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-05T21:00:03.942Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:19.786Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261106",
+            "kind": "USD_JPY/1hour/20261106",
+            "startedUTC": "2026-11-27T23:01:19.786Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-08T22:00:04.369Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:20.250Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261107",
+            "kind": "USD_JPY/1hour/20261107",
+            "startedUTC": "2026-11-27T23:01:20.250Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-07T20:59:57.291Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:20.712Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261108",
+            "kind": "USD_JPY/1hour/20261108",
+            "startedUTC": "2026-11-27T23:01:20.713Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-08T20:59:59.488Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:21.184Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261109",
+            "kind": "USD_JPY/1hour/20261109",
+            "startedUTC": "2026-11-27T23:01:21.184Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-09T21:00:03.168Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:01:21.651Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261110",
+            "kind": "USD_JPY/1hour/20261110",
+            "startedUTC": "2026-11-27T23:01:21.651Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-10T21:00:01.500Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:22.410Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261111",
+            "kind": "USD_JPY/1hour/20261111",
+            "startedUTC": "2026-11-27T23:01:22.411Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-11T21:00:03.061Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:22.876Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261112",
+            "kind": "USD_JPY/1hour/20261112",
+            "startedUTC": "2026-11-27T23:01:22.876Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-12T21:00:02.557Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:23.338Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261113",
+            "kind": "USD_JPY/1hour/20261113",
+            "startedUTC": "2026-11-27T23:01:23.338Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-15T22:00:04.548Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:23.808Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261114",
+            "kind": "USD_JPY/1hour/20261114",
+            "startedUTC": "2026-11-27T23:01:23.808Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-14T20:59:57.072Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:24.564Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261115",
+            "kind": "USD_JPY/1hour/20261115",
+            "startedUTC": "2026-11-27T23:01:24.564Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-15T20:59:59.638Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:25.322Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261116",
+            "kind": "USD_JPY/1hour/20261116",
+            "startedUTC": "2026-11-27T23:01:25.323Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-16T21:00:01.441Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:01:25.786Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261117",
+            "kind": "USD_JPY/1hour/20261117",
+            "startedUTC": "2026-11-27T23:01:25.786Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-17T21:00:00.531Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:26.550Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261118",
+            "kind": "USD_JPY/1hour/20261118",
+            "startedUTC": "2026-11-27T23:01:26.550Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-18T21:00:02.213Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:27.019Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261119",
+            "kind": "USD_JPY/1hour/20261119",
+            "startedUTC": "2026-11-27T23:01:27.019Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-19T21:00:02.743Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:27.484Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261120",
+            "kind": "USD_JPY/1hour/20261120",
+            "startedUTC": "2026-11-27T23:01:27.484Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-22T22:00:05.082Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:27.955Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261121",
+            "kind": "USD_JPY/1hour/20261121",
+            "startedUTC": "2026-11-27T23:01:27.955Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-21T20:59:57.770Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:28.724Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261122",
+            "kind": "USD_JPY/1hour/20261122",
+            "startedUTC": "2026-11-27T23:01:28.724Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-22T20:59:57.392Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:29.492Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261123",
+            "kind": "USD_JPY/1hour/20261123",
+            "startedUTC": "2026-11-27T23:01:29.492Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-23T21:00:01.085Z",
+            "rowCount": 23,
+            "fetchedUTC": "2026-11-27T23:01:29.958Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261124",
+            "kind": "USD_JPY/1hour/20261124",
+            "startedUTC": "2026-11-27T23:01:29.958Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-24T21:00:01.222Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:30.718Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261125",
+            "kind": "USD_JPY/1hour/20261125",
+            "startedUTC": "2026-11-27T23:01:30.718Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-25T21:00:02.423Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:31.184Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261126",
+            "kind": "USD_JPY/1hour/20261126",
+            "startedUTC": "2026-11-27T23:01:31.184Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-26T21:00:01.920Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:31.656Z",
+            "ok": true
           },
           {
             "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261127",
-            "startedUTC": "2026-11-27T02:56:04.822Z",
-            "fetchedUTC": "2026-11-27T02:56:05.035Z",
-            "responseUTC": "2026-11-27T02:56:02.818Z"
+            "kind": "USD_JPY/1hour/20261127",
+            "startedUTC": "2026-11-27T23:01:31.656Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-27T20:59:01.801Z",
+            "rowCount": 24,
+            "fetchedUTC": "2026-11-27T23:01:32.123Z",
+            "ok": true
+          },
+          {
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=1hour&date=20261128",
+            "kind": "USD_JPY/1hour/20261128",
+            "startedUTC": "2026-11-27T23:01:32.123Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-27T23:01:29.790Z",
+            "rowCount": 0,
+            "fetchedUTC": "2026-11-27T23:01:32.648Z",
+            "ok": true
           },
           {
             "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=4hour&date=2026",
-            "startedUTC": "2026-11-27T02:56:05.337Z",
-            "fetchedUTC": "2026-11-27T02:56:06.316Z",
-            "responseUTC": "2026-11-27T02:56:02.847Z"
+            "kind": "USD_JPY/4hour/2026",
+            "startedUTC": "2026-11-27T23:01:32.648Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-11-27T20:59:01.906Z",
+            "rowCount": 1464,
+            "fetchedUTC": "2026-11-27T23:01:33.410Z",
+            "ok": true
           },
           {
-            "url": "https://forex-api.coin.z.com/public/v1/ticker",
-            "startedUTC": "2026-11-27T02:56:06.624Z",
-            "fetchedUTC": "2026-11-27T02:56:06.810Z",
-            "responseUTC": "2026-11-27T02:56:06.719Z"
+            "url": "https://forex-api.coin.z.com/public/v1/klines?symbol=USD_JPY&priceType=BID&interval=4hour&date=2025",
+            "kind": "USD_JPY/4hour/2025",
+            "startedUTC": "2026-11-27T23:01:33.412Z",
+            "attempts": 1,
+            "httpStatus": 200,
+            "responseUTC": "2026-01-01T22:00:03.220Z",
+            "rowCount": 1608,
+            "fetchedUTC": "2026-11-27T23:01:33.886Z",
+            "ok": true
           }
-        ]
-      },
-      "ticker": {
-        "bid": 159.166,
-        "ask": 159.171,
-        "timestamp": "2026-11-27T02:56:06.6647Z",
-        "status": "OPEN"
+        ],
+        "rawCounts": {
+          "m15": 1039,
+          "h1": 783,
+          "h4": 446,
+          "d1": 1787
+        },
+        "rawCountBasis": {
+          "m15": "native 15min",
+          "h1": "native 1hour",
+          "h4": "native 4hour",
+          "d1": "native 4hour input"
+        },
+        "confirmedCounts": {
+          "m15": 1039,
+          "h1": 783,
+          "h4": 445,
+          "d1": 346
+        },
+        "requestedPartitions": {
+          "m15": [
+            "20261113",
+            "20261114",
+            "20261115",
+            "20261116",
+            "20261117",
+            "20261118",
+            "20261119",
+            "20261120",
+            "20261121",
+            "20261122",
+            "20261123",
+            "20261124",
+            "20261125",
+            "20261126",
+            "20261127",
+            "20261128"
+          ],
+          "h1": [
+            "20261014",
+            "20261015",
+            "20261016",
+            "20261017",
+            "20261018",
+            "20261019",
+            "20261020",
+            "20261021",
+            "20261022",
+            "20261023",
+            "20261024",
+            "20261025",
+            "20261026",
+            "20261027",
+            "20261028",
+            "20261029",
+            "20261030",
+            "20261031",
+            "20261101",
+            "20261102",
+            "20261103",
+            "20261104",
+            "20261105",
+            "20261106",
+            "20261107",
+            "20261108",
+            "20261109",
+            "20261110",
+            "20261111",
+            "20261112",
+            "20261113",
+            "20261114",
+            "20261115",
+            "20261116",
+            "20261117",
+            "20261118",
+            "20261119",
+            "20261120",
+            "20261121",
+            "20261122",
+            "20261123",
+            "20261124",
+            "20261125",
+            "20261126",
+            "20261127",
+            "20261128"
+          ],
+          "h4": [
+            "2026"
+          ],
+          "d1": [
+            "2025",
+            "2026"
+          ]
+        },
+        "lookbackStartUTC": {
+          "m15": "2026-11-12T23:00:24.861Z",
+          "h1": "2026-10-13T23:00:24.861Z",
+          "h4": "2026-08-19T23:00:24.861Z",
+          "d1": "2025-10-20T00:00:00.000Z"
+        },
+        "frameSources": {
+          "m15": "native 15min",
+          "h1": "native 1hour",
+          "h4": "native UTC 4hour",
+          "d1": "UTC calendar days aggregated from native UTC 4hour"
+        },
+        "aggregation": "UTC 4h boundaries checked on every source row; UTC daily OHLC uses existing source bars only; no synthetic weekend/holiday candles; first daily date aligned to Monday UTC for complete weekly aggregation.",
+        "datePartition": "Intraday YYYYMMDD changes at 06:00 JST (21:00 UTC); request date = UTC date of timestamp + 3h. Native 4hour requests use YYYY.",
+        "responseTimeNote": "Historical yearly responses may retain an old responsetime; fetchedUTC is the actual retrieval time. Candle freshness is checked from candle close times."
       },
       "frames": {
         "m15": {
-          "status": "ok",
-          "count": 1049,
-          "latestCloseUTC": "2026-11-27T02:45:00.000Z",
-          "ageHours": 0.19,
-          "close": 159.171,
+          "status": "market_closed",
+          "count": 1039,
+          "latestCloseUTC": "2026-11-27T21:00:00.000Z",
+          "ageHours": 2.01,
+          "close": 159.483,
           "trend": "上昇",
           "importantHighs": [
             {
-              "timestamp": 1795713300000,
-              "price": 159.32
+              "timestamp": 1795803300000,
+              "price": 159.545
             },
             {
-              "timestamp": 1795740300000,
-              "price": 159.377
+              "timestamp": 1795807800000,
+              "price": 159.574
             }
           ],
           "importantLows": [
             {
-              "timestamp": 1795729500000,
-              "price": 159.166
+              "timestamp": 1795797000000,
+              "price": 159.483
             },
             {
-              "timestamp": 1795732200000,
-              "price": 159.167
+              "timestamp": 1795809600000,
+              "price": 159.542
             }
           ],
           "supports": [
             {
-              "timestamp": 1795613400000,
-              "price": 159.169
+              "timestamp": 1795772700000,
+              "price": 159.456
             },
             {
-              "timestamp": 1795732200000,
-              "price": 159.167
+              "timestamp": 1795789800000,
+              "price": 159.431
             },
             {
-              "timestamp": 1795729500000,
-              "price": 159.166
+              "timestamp": 1795779900000,
+              "price": 159.373
             }
           ],
           "resistances": [
             {
-              "timestamp": 1795662900000,
-              "price": 159.219
+              "timestamp": 1795587300000,
+              "price": 159.489
             },
             {
-              "timestamp": 1795651200000,
-              "price": 159.229
+              "timestamp": 1795584600000,
+              "price": 159.494
             },
             {
-              "timestamp": 1795679100000,
-              "price": 159.231
+              "timestamp": 1795450500000,
+              "price": 159.502
             }
           ],
-          "rsi14": 38.393520032253456,
+          "rsi14": 41.40281549884056,
           "macd12269": {
-            "macd": -0.005693969795657949,
-            "signal": 0.004668520005965152,
-            "histogram": -0.0103624898016231
+            "macd": 0.011770394913128257,
+            "signal": 0.016764056381072194,
+            "histogram": -0.004993661467943937
           },
-          "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+          "expectedCloseUTC": "2026-11-27T22:45:00.000Z",
+          "reason": "未更新/判定不可（取得元市場休場。指標値は最終確定足の参考値）",
+          "source": "GMO Coin Forex Public API (BID OHLC)",
           "priceType": "BID",
-          "confirmedCount": 1049
+          "rawCount": 1039,
+          "rawCountBasis": "native 15min",
+          "confirmedCount": 1039
         },
         "h1": {
-          "status": "ok",
-          "count": 785,
-          "latestCloseUTC": "2026-11-27T02:00:00.000Z",
-          "ageHours": 0.94,
-          "close": 159.22,
-          "trend": "混在・転換・レンジ",
+          "status": "market_closed",
+          "count": 783,
+          "latestCloseUTC": "2026-11-27T21:00:00.000Z",
+          "ageHours": 2.01,
+          "close": 159.483,
+          "trend": "上昇",
           "importantHighs": [
             {
-              "timestamp": 1795690800000,
-              "price": 159.331
+              "timestamp": 1795773600000,
+              "price": 159.57
             },
             {
-              "timestamp": 1795708800000,
-              "price": 159.337
+              "timestamp": 1795791600000,
+              "price": 159.594
             }
           ],
           "importantLows": [
             {
-              "timestamp": 1795701600000,
-              "price": 159.173
+              "timestamp": 1795744800000,
+              "price": 159.14
             },
             {
-              "timestamp": 1795726800000,
-              "price": 159.166
+              "timestamp": 1795777200000,
+              "price": 159.373
             }
           ],
           "supports": [
             {
+              "timestamp": 1795777200000,
+              "price": 159.373
+            },
+            {
               "timestamp": 1795701600000,
               "price": 159.173
             },
             {
               "timestamp": 1795726800000,
               "price": 159.166
-            },
-            {
-              "timestamp": 1795550400000,
-              "price": 159.121
             }
           ],
           "resistances": [
             {
-              "timestamp": 1795651200000,
-              "price": 159.229
+              "timestamp": 1795582800000,
+              "price": 159.494
             },
             {
-              "timestamp": 1795636800000,
-              "price": 159.246
+              "timestamp": 1795449600000,
+              "price": 159.502
             },
             {
-              "timestamp": 1795669200000,
-              "price": 159.258
+              "timestamp": 1795773600000,
+              "price": 159.57
             }
           ],
-          "rsi14": 49.8087930631469,
+          "rsi14": 55.45154887866562,
           "macd12269": {
-            "macd": 0.015995954782852095,
-            "signal": 0.01739170097474585,
-            "histogram": -0.0013957461918937542
+            "macd": 0.07324159027197652,
+            "signal": 0.0716249964631693,
+            "histogram": 0.0016165938088072151
           },
-          "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+          "expectedCloseUTC": "2026-11-27T22:00:00.000Z",
+          "reason": "未更新/判定不可（取得元市場休場。指標値は最終確定足の参考値）",
+          "source": "GMO Coin Forex Public API (BID OHLC)",
           "priceType": "BID",
-          "confirmedCount": 785
+          "rawCount": 783,
+          "rawCountBasis": "native 1hour",
+          "confirmedCount": 783
         },
         "h4": {
-          "status": "ok",
-          "count": 1458,
-          "latestCloseUTC": "2026-11-27T00:00:00.000Z",
-          "ageHours": 2.94,
-          "close": 159.27,
-          "trend": "下落",
+          "status": "market_closed",
+          "count": 445,
+          "latestCloseUTC": "2026-11-27T20:00:00.000Z",
+          "ageHours": 3.01,
+          "close": 159.562,
+          "trend": "混在・転換・レンジ",
           "importantHighs": [
             {
               "timestamp": 1795507200000,
@@ -1068,57 +2193,61 @@
           ],
           "importantLows": [
             {
-              "timestamp": 1795579200000,
-              "price": 158.997
-            },
-            {
               "timestamp": 1795622400000,
               "price": 158.661
+            },
+            {
+              "timestamp": 1795737600000,
+              "price": 159.14
             }
           ],
           "supports": [
             {
-              "timestamp": 1794974400000,
-              "price": 159.123
+              "timestamp": 1794441600000,
+              "price": 159.477
             },
             {
-              "timestamp": 1795579200000,
-              "price": 158.997
+              "timestamp": 1794816000000,
+              "price": 159.35
             },
             {
-              "timestamp": 1794902400000,
-              "price": 158.866
+              "timestamp": 1794499200000,
+              "price": 159.299
             }
           ],
           "resistances": [
             {
-              "timestamp": 1787745600000,
-              "price": 159.443
+              "timestamp": 1795507200000,
+              "price": 159.581
             },
             {
-              "timestamp": 1795003200000,
-              "price": 159.478
+              "timestamp": 1794960000000,
+              "price": 159.648
             },
             {
-              "timestamp": 1787644800000,
-              "price": 159.489
+              "timestamp": 1794412800000,
+              "price": 159.937
             }
           ],
-          "rsi14": 52.39481083323087,
+          "rsi14": 62.605142722745924,
           "macd12269": {
-            "macd": 0.019381475517349145,
-            "signal": 0.002732262847230069,
-            "histogram": 0.016649212670119075
+            "macd": 0.07091830006359601,
+            "signal": 0.03280322885225192,
+            "histogram": 0.03811507121134409
           },
-          "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+          "expectedCloseUTC": "2026-11-27T20:00:00.000Z",
+          "reason": "未更新/判定不可（取得元市場休場。指標値は最終確定足の参考値）",
+          "source": "GMO Coin Forex Public API (BID OHLC)",
           "priceType": "BID",
-          "confirmedCount": 1458
+          "rawCount": 446,
+          "rawCountBasis": "native 4hour",
+          "confirmedCount": 445
         },
         "d1": {
-          "status": "ok",
+          "status": "market_closed",
           "count": 346,
           "latestCloseUTC": "2026-11-27T00:00:00.000Z",
-          "ageHours": 2.94,
+          "ageHours": 23.01,
           "close": 159.27,
           "trend": "下落",
           "importantHighs": [
@@ -1175,15 +2304,19 @@
             "signal": 0.3475179458280628,
             "histogram": -0.05137384564955377
           },
-          "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+          "expectedCloseUTC": "2026-11-27T00:00:00.000Z",
+          "reason": "未更新/判定不可（取得元市場休場。指標値は最終確定足の参考値）",
+          "source": "GMO Coin Forex Public API (BID OHLC)",
           "priceType": "BID",
+          "rawCount": 1787,
+          "rawCountBasis": "native 4hour input",
           "confirmedCount": 346
         },
         "w1": {
-          "status": "ok",
+          "status": "market_closed",
           "count": 57,
           "latestCloseUTC": "2026-11-23T00:00:00.000Z",
-          "ageHours": 98.94,
+          "ageHours": 119.01,
           "close": 158.925,
           "trend": "混在・転換・レンジ",
           "importantHighs": [
@@ -1240,495 +2373,25 @@
             "signal": -0.11637964601295647,
             "histogram": 0.08094232219185682
           },
-          "source": "GMO Coin Forex Public API (BID OHLC + live BID/ASK)",
+          "expectedCloseUTC": "2026-11-23T00:00:00.000Z",
+          "reason": "未更新/判定不可（取得元市場休場。指標値は最終確定足の参考値）",
+          "source": "GMO Coin Forex Public API (BID OHLC)",
           "priceType": "BID",
-          "confirmedCount": 57
+          "formingWeek": {
+            "timestamp": 1795392000000,
+            "open": 158.925,
+            "high": 159.581,
+            "low": 158.661,
+            "close": 159.27
+          }
         }
       },
-      "formingFrames": {
-        "m15": {
-          "status": "unconfirmed",
-          "candles": [
-            {
-              "timestamp": 1795747500000,
-              "open": 159.171,
-              "high": 159.176,
-              "low": 159.14,
-              "close": 159.165
-            }
-          ],
-          "provisionalIndicators": {
-            "status": "ok",
-            "count": 1050,
-            "latestCloseUTC": "2026-11-27T03:00:00.000Z",
-            "ageHours": -0.06,
-            "close": 159.165,
-            "trend": "上昇",
-            "importantHighs": [
-              {
-                "timestamp": 1795713300000,
-                "price": 159.32
-              },
-              {
-                "timestamp": 1795740300000,
-                "price": 159.377
-              }
-            ],
-            "importantLows": [
-              {
-                "timestamp": 1795729500000,
-                "price": 159.166
-              },
-              {
-                "timestamp": 1795732200000,
-                "price": 159.167
-              }
-            ],
-            "supports": [
-              {
-                "timestamp": 1795553100000,
-                "price": 159.121
-              },
-              {
-                "timestamp": 1795677300000,
-                "price": 159.114
-              },
-              {
-                "timestamp": 1795673700000,
-                "price": 159.111
-              }
-            ],
-            "resistances": [
-              {
-                "timestamp": 1795662900000,
-                "price": 159.219
-              },
-              {
-                "timestamp": 1795651200000,
-                "price": 159.229
-              },
-              {
-                "timestamp": 1795679100000,
-                "price": 159.231
-              }
-            ],
-            "rsi14": 37.740535872668794,
-            "macd12269": {
-              "macd": -0.011715939166066391,
-              "signal": 0.0013916281715588433,
-              "histogram": -0.013107567337625234
-            }
-          },
-          "sourceFetchedUTC": "2026-11-27T02:56:06.620Z"
-        },
-        "h1": {
-          "status": "unconfirmed",
-          "candles": [
-            {
-              "timestamp": 1795744800000,
-              "open": 159.219,
-              "high": 159.246,
-              "low": 159.14,
-              "close": 159.165
-            }
-          ],
-          "provisionalIndicators": {
-            "status": "ok",
-            "count": 786,
-            "latestCloseUTC": "2026-11-27T03:00:00.000Z",
-            "ageHours": -0.06,
-            "close": 159.165,
-            "trend": "混在・転換・レンジ",
-            "importantHighs": [
-              {
-                "timestamp": 1795708800000,
-                "price": 159.337
-              },
-              {
-                "timestamp": 1795737600000,
-                "price": 159.377
-              }
-            ],
-            "importantLows": [
-              {
-                "timestamp": 1795701600000,
-                "price": 159.173
-              },
-              {
-                "timestamp": 1795726800000,
-                "price": 159.166
-              }
-            ],
-            "supports": [
-              {
-                "timestamp": 1795550400000,
-                "price": 159.121
-              },
-              {
-                "timestamp": 1795575600000,
-                "price": 159.102
-              },
-              {
-                "timestamp": 1795680000000,
-                "price": 159.089
-              }
-            ],
-            "resistances": [
-              {
-                "timestamp": 1795651200000,
-                "price": 159.229
-              },
-              {
-                "timestamp": 1795636800000,
-                "price": 159.246
-              },
-              {
-                "timestamp": 1795669200000,
-                "price": 159.258
-              }
-            ],
-            "rsi14": 46.29543596807552,
-            "macd12269": {
-              "macd": 0.008853090987912537,
-              "signal": 0.015683978977379186,
-              "histogram": -0.006830887989466648
-            }
-          },
-          "sourceFetchedUTC": "2026-11-27T02:56:06.620Z"
-        },
-        "h4": {
-          "status": "unconfirmed",
-          "candles": [
-            {
-              "timestamp": 1795737600000,
-              "open": 159.27,
-              "high": 159.377,
-              "low": 159.14,
-              "close": 159.165
-            }
-          ],
-          "provisionalIndicators": {
-            "status": "ok",
-            "count": 1459,
-            "latestCloseUTC": "2026-11-27T04:00:00.000Z",
-            "ageHours": -1.06,
-            "close": 159.165,
-            "trend": "下落",
-            "importantHighs": [
-              {
-                "timestamp": 1795507200000,
-                "price": 159.581
-              },
-              {
-                "timestamp": 1795579200000,
-                "price": 159.494
-              }
-            ],
-            "importantLows": [
-              {
-                "timestamp": 1795579200000,
-                "price": 158.997
-              },
-              {
-                "timestamp": 1795622400000,
-                "price": 158.661
-              }
-            ],
-            "supports": [
-              {
-                "timestamp": 1794974400000,
-                "price": 159.123
-              },
-              {
-                "timestamp": 1795579200000,
-                "price": 158.997
-              },
-              {
-                "timestamp": 1794902400000,
-                "price": 158.866
-              }
-            ],
-            "resistances": [
-              {
-                "timestamp": 1787745600000,
-                "price": 159.443
-              },
-              {
-                "timestamp": 1795003200000,
-                "price": 159.478
-              },
-              {
-                "timestamp": 1787644800000,
-                "price": 159.489
-              }
-            ],
-            "rsi14": 48.2783391712616,
-            "macd12269": {
-              "macd": 0.012728085331559669,
-              "signal": 0.004731427344095989,
-              "histogram": 0.00799665798746368
-            }
-          },
-          "sourceFetchedUTC": "2026-11-27T02:56:06.620Z"
-        },
-        "d1": {
-          "status": "unconfirmed",
-          "candles": [
-            {
-              "timestamp": 1795737600000,
-              "open": 159.27,
-              "high": 159.377,
-              "low": 159.14,
-              "close": 159.165
-            }
-          ],
-          "provisionalIndicators": {
-            "status": "ok",
-            "count": 347,
-            "latestCloseUTC": "2026-11-28T00:00:00.000Z",
-            "ageHours": -21.06,
-            "close": 159.165,
-            "trend": "混在・転換・レンジ",
-            "importantHighs": [
-              {
-                "timestamp": 1795046400000,
-                "price": 159.967
-              },
-              {
-                "timestamp": 1795478400000,
-                "price": 159.581
-              }
-            ],
-            "importantLows": [
-              {
-                "timestamp": 1795132800000,
-                "price": 158.376
-              },
-              {
-                "timestamp": 1795564800000,
-                "price": 158.661
-              }
-            ],
-            "supports": [
-              {
-                "timestamp": 1780012800000,
-                "price": 159.098
-              },
-              {
-                "timestamp": 1794873600000,
-                "price": 158.866
-              },
-              {
-                "timestamp": 1795564800000,
-                "price": 158.661
-              }
-            ],
-            "resistances": [
-              {
-                "timestamp": 1786579200000,
-                "price": 159.563
-              },
-              {
-                "timestamp": 1795478400000,
-                "price": 159.581
-              },
-              {
-                "timestamp": 1787011200000,
-                "price": 159.776
-              }
-            ],
-            "rsi14": 53.96588035434131,
-            "macd12269": {
-              "macd": 0.27741568667329375,
-              "signal": 0.333497493997109,
-              "histogram": -0.056081807323815236
-            }
-          },
-          "sourceFetchedUTC": "2026-11-27T02:56:06.620Z"
-        },
-        "w1": {
-          "status": "unconfirmed",
-          "candles": [
-            {
-              "timestamp": 1795392000000,
-              "open": 158.925,
-              "high": 159.581,
-              "low": 158.661,
-              "close": 159.165
-            }
-          ],
-          "provisionalIndicators": {
-            "status": "ok",
-            "count": 58,
-            "latestCloseUTC": "2026-11-30T00:00:00.000Z",
-            "ageHours": -69.06,
-            "close": 159.165,
-            "trend": "上昇",
-            "importantHighs": [
-              {
-                "timestamp": 1791763200000,
-                "price": 158.947
-              },
-              {
-                "timestamp": 1794182400000,
-                "price": 160.188
-              }
-            ],
-            "importantLows": [
-              {
-                "timestamp": 1788739200000,
-                "price": 152.888
-              },
-              {
-                "timestamp": 1792368000000,
-                "price": 156.076
-              }
-            ],
-            "supports": [
-              {
-                "timestamp": 1792368000000,
-                "price": 156.076
-              },
-              {
-                "timestamp": 1785715200000,
-                "price": 155.222
-              },
-              {
-                "timestamp": 1777852800000,
-                "price": 155.027
-              }
-            ],
-            "resistances": [
-              {
-                "timestamp": 1768176000000,
-                "price": 159.454
-              },
-              {
-                "timestamp": 1794182400000,
-                "price": 160.188
-              },
-              {
-                "timestamp": 1788134400000,
-                "price": 160.391
-              }
-            ],
-            "rsi14": 52.914677657819084,
-            "macd12269": {
-              "macd": 0.03772919064894609,
-              "signal": -0.08555787868057596,
-              "histogram": 0.12328706932952205
-            }
-          },
-          "sourceFetchedUTC": "2026-11-27T02:56:06.620Z"
-        }
-      },
-      "charts": {
-        "m15": "charts/usdjpy_m15.svg",
-        "h1": "charts/usdjpy_h1.svg",
-        "h4": "charts/usdjpy_h4.svg",
-        "d1": "charts/usdjpy_d1.svg",
-        "w1": "charts/usdjpy_w1.svg"
-      },
-      "pngCharts": {
-        "m15": "charts/usdjpy_m15.png",
-        "h1": "charts/usdjpy_h1.png",
-        "h4": "charts/usdjpy_h4.png",
-        "d1": "charts/usdjpy_d1.png",
-        "w1": "charts/usdjpy_w1.png"
-      },
-      "chartArtifacts": {
-        "m15": {
-          "symbol": "USD/JPY",
-          "timeframe": "m15",
-          "generatedUTC": "2026-11-27T02:56:06.810Z",
-          "latestCloseUTC": "2026-11-27T02:45:00.000Z",
-          "quoteUTC": "2026-11-27T02:56:06.6647Z",
-          "bid": 159.166,
-          "ask": 159.171,
-          "formingOpenUTC": [
-            "2026-11-27T02:45:00.000Z"
-          ],
-          "width": 2360,
-          "height": 1401,
-          "sourceSvgSha256": "ef1ecd94710668f7a0129679bc037e788c22e5704bdcbbe7e6618ee6add4efcd",
-          "pngSha256": "313ff6854121478cfbf5713745def7a992044b8e00e3c19b4bae5ddec5a6fdae",
-          "svg": "charts/usdjpy_m15.svg",
-          "png": "charts/usdjpy_m15.png"
-        },
-        "h1": {
-          "symbol": "USD/JPY",
-          "timeframe": "h1",
-          "generatedUTC": "2026-11-27T02:56:06.810Z",
-          "latestCloseUTC": "2026-11-27T02:00:00.000Z",
-          "quoteUTC": "2026-11-27T02:56:06.6647Z",
-          "bid": 159.166,
-          "ask": 159.171,
-          "formingOpenUTC": [
-            "2026-11-27T02:00:00.000Z"
-          ],
-          "width": 2360,
-          "height": 1401,
-          "sourceSvgSha256": "6dcf17309c06cb97cc29b683e39b9ae27e97696c849de1036be09a72ee62cd18",
-          "pngSha256": "db6aa2716bde284d2d6673e7a5073a096a8f5d7095719d5867146f459a9c675f",
-          "svg": "charts/usdjpy_h1.svg",
-          "png": "charts/usdjpy_h1.png"
-        },
-        "h4": {
-          "symbol": "USD/JPY",
-          "timeframe": "h4",
-          "generatedUTC": "2026-11-27T02:56:06.810Z",
-          "latestCloseUTC": "2026-11-27T00:00:00.000Z",
-          "quoteUTC": "2026-11-27T02:56:06.6647Z",
-          "bid": 159.166,
-          "ask": 159.171,
-          "formingOpenUTC": [
-            "2026-11-27T00:00:00.000Z"
-          ],
-          "width": 2360,
-          "height": 1401,
-          "sourceSvgSha256": "a774e9342e5f53297db8ddf226f45dca671a5dc4466473050d68948742d1a978",
-          "pngSha256": "a66ad03e839d1ade6a4326f68559c23fd083f650f20902cade8d3f00ee559329",
-          "svg": "charts/usdjpy_h4.svg",
-          "png": "charts/usdjpy_h4.png"
-        },
-        "d1": {
-          "symbol": "USD/JPY",
-          "timeframe": "d1",
-          "generatedUTC": "2026-11-27T02:56:06.810Z",
-          "latestCloseUTC": "2026-11-27T00:00:00.000Z",
-          "quoteUTC": "2026-11-27T02:56:06.6647Z",
-          "bid": 159.166,
-          "ask": 159.171,
-          "formingOpenUTC": [
-            "2026-11-27T00:00:00.000Z"
-          ],
-          "width": 2360,
-          "height": 1401,
-          "sourceSvgSha256": "d2078ea061137d629d843db06ed47fb0f65fc57ed062d0a62e3e0ef8efbf577d",
-          "pngSha256": "27a6fdade4f85e52e0a1fc96f870930c8157d171e255c63477f65d9b473cc5b9",
-          "svg": "charts/usdjpy_d1.svg",
-          "png": "charts/usdjpy_d1.png"
-        },
-        "w1": {
-          "symbol": "USD/JPY",
-          "timeframe": "w1",
-          "generatedUTC": "2026-11-27T02:56:06.810Z",
-          "latestCloseUTC": "2026-11-23T00:00:00.000Z",
-          "quoteUTC": "2026-11-27T02:56:06.6647Z",
-          "bid": 159.166,
-          "ask": 159.171,
-          "formingOpenUTC": [
-            "2026-11-23T00:00:00.000Z"
-          ],
-          "width": 2360,
-          "height": 1401,
-          "sourceSvgSha256": "ea512b8b54756ab833d04a63cc73de8f098c6592245294c26d3b837002eee86b",
-          "pngSha256": "6be45af0611c371711ab26258a7c1cbaedd9bbca3d890312dbd225a434d0f7e6",
-          "svg": "charts/usdjpy_w1.svg",
-          "png": "charts/usdjpy_w1.png"
-        }
-      },
-      "errors": []
+      "charts": {},
+      "errors": [],
+      "pngCharts": {},
+      "chartArtifacts": {}
     }
-  }
+  },
+  "runStatus": "market_closed",
+  "runUrl": "https://github.com/railgun0112gaburias-boop/fx-daily-analysis/actions/runs/46079943147"
 }
